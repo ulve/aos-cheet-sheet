@@ -1,59 +1,176 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { battleLine } from '$lib/gitz';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div class="container">
+	{#each battleLine as unit}
+		<div class="unit">
+			<div class="statline">
+				<div class="name">
+					{unit.name}
+				</div>
+				<div>
+					<b>M: </b>{unit.movement}
+				</div>
+				<div>
+					<b>Sv: </b>{unit.save}
+				</div>
+				<div>
+					<b>Br: </b>{unit.bravery}
+				</div>
+				<div>
+					<b>W: </b>{unit.wounds}
+				</div>
+			</div>
+			{#if unit.missileWeapons}
+				<div class="weaponprofile">
+					<div class="weapon-header">
+						<div class="stat-header">Missile</div>
+						<div class="stat-header">Rng</div>
+						<div class="stat-header">Att</div>
+						<div class="stat-header">Hit</div>
+						<div class="stat-header">Wnd</div>
+						<div class="stat-header">Rnd</div>
+						<div class="stat-header">Dam</div>
+					</div>
+					{#each unit.missileWeapons as weapon}
+						<div class="weapon">
+							<div class="stat">{weapon.name}</div>
+							<div class="stat">
+								{weapon.range}
+							</div>
+							<div class="stat">
+								{weapon.attacks}
+							</div>
+							<div class="stat">
+								{weapon.toHit}
+							</div>
+							<div class="stat">
+								{weapon.toWound}
+							</div>
+							<div class="stat">
+								{weapon.rend}
+							</div>
+							<div class="stat">
+								{weapon.damage}
+							</div>
+						</div>
+					{/each}
+				</div>
+			{/if}
+			{#if unit.meleeWeapons}
+				<div class="weaponprofile">
+					<div class="weapon-header">
+						<div class="stat-header">Melee</div>
+						<div class="stat-header">Rng</div>
+						<div class="stat-header">Att</div>
+						<div class="stat-header">Hit</div>
+						<div class="stat-header">Wnd</div>
+						<div class="stat-header">Rnd</div>
+						<div class="stat-header">Dam</div>
+					</div>
+					{#each unit.meleeWeapons as weapon}
+						<div class="weapon">
+							<div class="stat">{weapon.name}</div>
+							<div class="stat">
+								{weapon.range}
+							</div>
+							<div class="stat">
+								{weapon.attacks}
+							</div>
+							<div class="stat">
+								{weapon.toHit}
+							</div>
+							<div class="stat">
+								{weapon.toWound}
+							</div>
+							<div class="stat">
+								{weapon.rend}
+							</div>
+							<div class="stat">
+								{weapon.damage}
+							</div>
+						</div>
+					{/each}
+				</div>
+			{/if}
+			<div class="abilities">
+				{#if unit.champion}
+					<b>Champion: </b>
+					{unit.champion}
+				{/if}
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+				{#if unit.standard}
+					<b>Standard: </b>{unit.standard}
+				{/if}
 
-		to your new<br />SvelteKit app
-	</h1>
+				{#if unit.musician}
+					<b>Musician: </b>{unit.musician}
+				{/if}
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+				{#if unit.abilities}
+					{#each unit.abilities as ability}
+						<b>{ability.name}: </b>{ability.description}
+					{/each}
+				{/if}
+			</div>
+		</div>
+	{/each}
+</div>
 
 <style>
-	section {
+	.container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 12px;
+		font-weight: 300;
+		width: 100vw;
+	}
+
+	.unit {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
-		flex: 0.6;
+		max-width: 30rem;
+		margin: 2rem;
+		border: 1px solid rgba(0, 0, 0, 0.1);
 	}
 
-	h1 {
-		width: 100%;
+	.statline {
+		display: grid;
+		align-self: stretch;
+		grid-template-columns: 3fr repeat(4, 1fr);
+		grid-gap: 1rem;
+		margin-bottom: 1rem;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	.name {
+		font-weight: bold;
+		font-size: 16px;
+	}
+	.weapon {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		gap: 1rem;
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	.weapon-header {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		gap: 1rem;
+		font-weight: 500;
+	}
+	.weaponprofile > .weapon:nth-child(2n + 1) {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	.stat-header {
+		font-weight: bold;
+	}
+
+	.abilities {
+		margin-top: 1rem;
 	}
 </style>
