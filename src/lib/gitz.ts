@@ -141,8 +141,42 @@ const hopper: Unit = {
   abilities: [{ name: 'Fly', description: 'This unit can fly. ' }, { name: 'Boing! Boing! Boing!', description: 'normal, run, retreat 4+ mortal for each model passing over enemy. ' }]
 }
 
+const boing: Unit = {
+  name: "Boingrot Bounderz",
+  movement: 'D6+7"',
+  save: '4+',
+  bravery: '5',
+  wounds: '2',
+  meleeWeapons: [
+    {
+      name: 'Pokin’ Lance',
+      range: '2"',
+      attacks: '2',
+      toHit: '4+',
+      toWound: '3+',
+      rend: '-1',
+      damage: '1'
+    },
+    {
+      name: 'Fang-filled Gob',
+      range: '1"',
+      attacks: '3',
+      toHit: '4+',
+      toWound: '3+',
+      rend: '-1',
+      damage: '1'
+    },
+  ],
+  champion: '+1A. ',
+  abilities: [
+    { name: 'Fly', description: 'This unit can fly. ' },
+    { name: 'Boing! Smash!!', description: 'After charge 4+ mortal for each model in this unit. ' },
+    { name: 'Lances of the Bounderz', description: 'Charge +1Dam -1Rnd. ' }
+  ]
+}
 export const battleLine: Unit[] = [
   shoota,
   stabba,
-  hopper
+  hopper,
+  boing
 ]
