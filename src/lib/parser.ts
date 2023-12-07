@@ -118,6 +118,7 @@ function parseSection(s: string, section: string): U[] {
                 line = line.trim().substring(1);
                 line = line.replace('Artefacts of Power:', '')
                 line = line.replace('Command Traits:', '')
+                line = line.replace('Spells:', '')
                 if (current)
                     current.options.push(line.trim());
             }

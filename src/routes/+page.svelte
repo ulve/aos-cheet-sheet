@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { battleLine, leaders, other, type Unit, commandTraits, artifacts } from '$lib/gitz';
+	import { battleLine, leaders, other, type Unit, options } from '$lib/gitz';
 	import { parse, type Parsed } from '$lib/parser';
-	import Layout from './+layout.svelte';
 	let debug = true;
 	let text = ``;
-	let info: Parsed = {
+	let parsedList: Parsed = {
 		meta: {
 			grandStrategy: '',
 			faction: '',
@@ -19,38 +18,32 @@
 	let units: Unit[] = [];
 	function papa() {
 		units = [];
-		info = parse(text);
-		let info2 = [...battleLine, ...leaders, ...other];
-		info.leaders.forEach((leader) => {
-			const h = info2.find((h) => h.name === leader.name);
+		parsedList = parse(text);
+		let allUnits = [...battleLine, ...leaders, ...other];
+		parsedList.leaders.forEach((leader) => {
+			const h = allUnits.find((h) => h.name === leader.name);
 			if (h) {
 				if (leader.options) {
 					console.log('leader has options', leader.options);
 					leader.options.forEach((option) => {
-						const a = artifacts.find((a) => a.name === option);
+						const a = options.find((a) => a.name === option);
 						if (a) {
 							console.log('found artifact', a);
 							h.abilities?.push(a);
-						}
-
-						const c = commandTraits.find((a) => a.name === option);
-						if (c) {
-							console.log('found command trait', c);
-							h.abilities?.push(c);
 						}
 					});
 				}
 				units.push(h);
 			}
 		});
-		info.battleline.forEach((bl) => {
-			const h = info2.find((h) => h.name === bl.name);
+		parsedList.battleline.forEach((bl) => {
+			const h = allUnits.find((h) => h.name === bl.name);
 			if (h) {
 				units.push(h);
 			}
 		});
-		info.other.forEach((o) => {
-			const h = info2.find((h) => h.name === o.name);
+		parsedList.other.forEach((o) => {
+			const h = allUnits.find((h) => h.name === o.name);
 			if (h) {
 				units.push(h);
 			}
@@ -72,14 +65,14 @@
 	<div>
 		<h2>Meta</h2>
 		<div>
-			Grand Strategy: {info.meta.grandStrategy}<br />
-			Faction: {info.meta.faction}<br />
-			SubFaction: {info.meta.subfaction}<br />
+			Grand Strategy: {parsedList.meta.grandStrategy}<br />
+			Faction: {parsedList.meta.faction}<br />
+			SubFaction: {parsedList.meta.subfaction}<br />
 		</div>
 		<h2>Leader</h2>
-		{#if info.leaders}
+		{#if parsedList.leaders}
 			<div class="leaders">
-				{#each info.leaders as leader}
+				{#each parsedList.leaders as leader}
 					<div class="leader">
 						{leader.name}<br />
 						{#each leader.options as ability}
@@ -89,10 +82,10 @@
 				{/each}
 			</div>
 		{/if}
-		{#if info.battleline}
+		{#if parsedList.battleline}
 			<h2>Battleline</h2>
 			<div class="battlelines">
-				{#each info.battleline as battleLine}
+				{#each parsedList.battleline as battleLine}
 					<div class="bl">
 						{battleLine.name}<br />
 						{#each battleLine.options as ability}
@@ -102,10 +95,10 @@
 				{/each}
 			</div>
 		{/if}
-		{#if info.other.length > 0}
+		{#if parsedList.other.length > 0}
 			<h2>Other</h2>
 			<div class="others">
-				{#each info.other as other}
+				{#each parsedList.other as other}
 					<div class="other">
 						{other.name}<br />
 						{#each other.options as ability}
@@ -115,10 +108,10 @@
 				{/each}
 			</div>
 		{/if}
-		{#if info.terrain}
+		{#if parsedList.terrain}
 			<h2>Terrain</h2>
 			<div class="terrains">
-				{#each info.terrain as terrain}
+				{#each parsedList.terrain as terrain}
 					<div class="terrain">
 						{terrain.name}<br />
 						{#each terrain.options as ability}

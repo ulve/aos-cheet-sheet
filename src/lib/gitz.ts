@@ -25,6 +25,7 @@ interface Weapon {
 interface Ability {
   name: string,
   description: string
+  type?: string
 }
 
 // Battleline
@@ -444,24 +445,204 @@ const squigboss: Unit = {
   ]
 }
 
-// Artifacts
+// Artefacts
 const loonstoneTeefcaps: Ability = {
+  type: "artefact",
   name: "Loonstone Teefcaps",
   description: "-1 Rnd. "
 }
 
+const leeringGitshield: Ability = {
+  type: "artefact",
+  name: "Leering Gitshield",
+  description: "1 on hit on this model causes attacker 1MW. If this unit is slain the killer gets -1 Hit until end of battle. "
+}
+
+const backstabbersBlade: Ability = {
+  type: "artefact",
+  name: "Backstabber’s Blade",
+  description: "Once per battle after combar 2+ D6 MW that cannot be negated. "
+}
+
+const clammyCowl: Ability = {
+  type: "artefact",
+  name: "The Clammy Cowl",
+  description: '-1 Hit against this unit. '
+}
+
+const moonfacedMommet: Ability = {
+  type: "artefact",
+  name: "Moonface Mommet",
+  description: 'Start of combat pick enemy unit within 12" -1 save. '
+}
+
+const staffOfSneakyStealin: Ability = {
+  type: "artefact",
+  name: "Staff of Sneaky Stealin’",
+  description: '+1 casting rolls and each unbind gives +1 extra. '
+}
+
+const headdressOfManyEyes: Ability = {
+  type: "artefact",
+  name: 'Headdress of Many Eyes',
+  description: 'Only 5 and 6 hit this model. '
+}
+
+const nibblasIttyRing: Ability = {
+  type: "artefact",
+  name: "Nibbla’s ’Itty Ring",
+  description: 'Once per battle roll 1 die to all casting. '
+}
+
+const totemOfTheSpiderGod: Ability = {
+  type: "artefact",
+  name: "Totem of the Spider God",
+  description: 'All spiderfang units wholly within 12" add 1MW to venom on 6. '
+}
+
+const glowyHowzit: Ability = {
+  type: "artefact",
+  name: "Glowy Howzit",
+  description: '4+ ward roll die end of every phase it worked on 1 stops working. '
+}
+
+const speakySkullFetish: Ability = {
+  type: "artefact",
+  name: "Speaky-skull Fetish",
+  description: 'Start of my hero phase roll 3 dice on 6 extra command and can issue same command 2 times. '
+}
+
+const petGribbly: Ability = {
+  type: "artefact",
+  name: "Pet Gribbly",
+  description: '+1W roll a die for each wound on 1 +1 hit and +1 wound rest of battle. '
+}
+
 // Command Traits
 const squigWhisperer: Ability = {
+  type: "commandTrait",
   name: "Squig Whisperer",
   description: "+1 hit +1 wnd for this general's mount. "
 }
 
-export const artifacts: Ability[] = [
-  loonstoneTeefcaps
-]
+const clammyHand: Ability = {
+  type: "commandTrait",
+  name: "Clammy Hand",
+  description: 'If within 12" of moonshrine use twice. '
+}
 
-export const commandTraits: Ability[] = [
-  squigWhisperer
+const loonTouched: Ability = {
+  type: "commandTrait",
+  name: "Loon-touched",
+  description: '1 additional spell if in moon. '
+}
+
+const fightAnotherDay: Ability = {
+  type: "commandTrait",
+  name: "Fight Another Day",
+  description: 'After fight, move 2D6" more than 3" from enemies. '
+}
+
+const supaNasty: Ability = {
+  type: "commandTrait",
+  name: "Supa-nasty Venom",
+  description: 'Double MW for this units venom. '
+}
+
+const alphaTrogg: Ability = {
+  type: "commandTrait",
+  name: "Alpha Trogg",
+  description: '+2W on this unit and MONSTER keyword. '
+}
+
+const troggSmash: Ability = {
+  type: "commandTrait",
+  name: "Trogg Smash",
+  description: 'Once per battle after combat all enemy units within 3" D3 MW on 2+. '
+}
+
+const loonskin: Ability = {
+  type: "commandTrait",
+  name: "Loonskin",
+  description: 'Free endless spell and can cast it. '
+}
+
+// spells
+const itchyNuisance: Ability = {
+  type: "spell",
+  name: "Itchy Nuisance",
+  description: 'CV6 range 18" strike last. '
+}
+
+const nikkitNikkit: Ability = {
+  type: "spell",
+  name: "Nikkit! Nikkit!",
+  description: 'CV8 range 12" D3MW 10+ loose artefact. '
+}
+
+const squigLure: Ability = {
+  type: "spell",
+  name: "Squig Lure",
+  description: 'CV5 range 18" Reroll charge on squig unit. '
+}
+
+const theHandOfGork: Ability = {
+  type: "spell",
+  name: "The Hand of Gork",
+  description: 'CV7 range 24" teleport 1 unit. '
+}
+
+const scuttlingTerrors: Ability = {
+  type: "spell",
+  name: "Scuttling Terrors",
+  description: 'CV6 range 18" spider unit make normal move. '
+}
+
+const sneakyDistraction: Ability = {
+  type: "spell",
+  name: "Sneaky Distraction",
+  description: 'CV7 range 12" -1 to hit. '
+}
+
+const curseOfTheSpiderGod: Ability = {
+  type: "spell",
+  name: "Curse of the Spider God",
+  description: 'CV7 range 24" hit and save always fail on 1 and 2. '
+}
+
+export const options: Ability[] = [
+  // Artefacts
+  leeringGitshield,
+  backstabbersBlade,
+  clammyCowl,
+  loonstoneTeefcaps,
+  moonfacedMommet,
+  staffOfSneakyStealin,
+
+  // Command Traits
+  clammyHand,
+  loonTouched,
+  fightAnotherDay,
+  supaNasty,
+  squigWhisperer,
+  alphaTrogg,
+  troggSmash,
+  loonskin,
+  headdressOfManyEyes,
+  nibblasIttyRing,
+  totemOfTheSpiderGod,
+  glowyHowzit,
+  speakySkullFetish,
+  petGribbly,
+
+  // spells
+  itchyNuisance,
+  nikkitNikkit,
+  squigLure,
+  theHandOfGork,
+  scuttlingTerrors,
+  sneakyDistraction,
+  curseOfTheSpiderGod,
 ]
 
 export const battleLine: Unit[] = [
