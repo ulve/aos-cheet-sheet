@@ -174,9 +174,100 @@ const boing: Unit = {
     { name: 'Lances of the Bounderz', description: 'Charge +1Dam -1Rnd. ' }
   ]
 }
+
+const dankhold: Unit = {
+  name: "Dankhold Troggoths",
+  movement: '6"',
+  save: '4+',
+  bravery: '6',
+  wounds: '10',
+  meleeWeapons: [
+    {
+      name: 'Colossal Boulder Club',
+      range: '2"',
+      attacks: '4',
+      toHit: '3+',
+      toWound: '2+',
+      rend: '-2',
+      damage: 'D3+3'
+    }
+  ],
+  abilities: [
+    { name: 'Regeneration', description: 'Hero phase heal D3 W. ' },
+    { name: 'Magical Resistance', description: '4+ spell save. ' },
+    { name: 'Squiggly-beast Followers', description: 'Start of combat, all enemy units within 3" take mortal on W+. ' },
+    { name: 'Crushing Grip', description: 'End of combat 1" slay model on W+. ' }
+  ]
+}
+
+const troggboss: Unit = {
+  name: "Dankhold Troggboss",
+  movement: '6"',
+  save: '4+',
+  bravery: '7',
+  wounds: '12',
+  meleeWeapons: [
+    {
+      name: 'Boulder Club',
+      range: '2"',
+      attacks: '4',
+      toHit: '3+',
+      toWound: '3+',
+      rend: '-2',
+      damage: 'D6'
+    }
+  ],
+  abilities: [
+    { name: 'Regeneration', description: 'Hero phase heal D6 W. ' },
+    { name: 'Magical Resistance', description: '4+ spell save. ' },
+    { name: 'Squiggly-beast Followers', description: 'Start of combat, all enemy units within 3" take mortal on W+. ' },
+    { name: 'Crushing Grip', description: 'End of combat 1" slay model on W+. ' }
+  ]
+
+}
+
+const fellwater: Unit = {
+  name: "Fellwater Troggoths",
+  movement: '6"',
+  save: '4+',
+  bravery: '5',
+  wounds: '4',
+  missileWeapons:
+    [
+      {
+        name: 'Noxious Vomit',
+        range: '6"',
+        attacks: '1',
+        toHit: '2+',
+        toWound: '3+',
+        rend: '-2',
+        damage: 'D3'
+      }
+    ],
+  meleeWeapons: [
+    {
+      name: 'Spiked Club',
+      range: '2"',
+      attacks: '4',
+      toHit: '3+',
+      toWound: '3+',
+      rend: '-1',
+      damage: '2'
+    }
+  ],
+  abilities: [
+    { name: 'Regeneration', description: 'Hero phase heal D3 W. ' },
+    { name: 'Terrible Stench', description: '-1 to hit within 3". ' },
+    { name: 'Noxious Vomit', description: 'If wounded by vomit -1 to save and no posivite modifiers to my next hero phase. ' },
+
+  ]
+}
 export const battleLine: Unit[] = [
   shoota,
   stabba,
   hopper,
-  boing
+  boing,
+  dankhold,
+  fellwater,
+  troggboss
 ]
