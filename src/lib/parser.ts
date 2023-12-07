@@ -37,14 +37,14 @@ const text = `- Army Faction: Gloomspite Gitz
 - Grand Strategy: A Scheme for Every Occasion
 - Triumph: Indomitable
 LEADERS
+Fungoid Cave-Shaman (110)
+- Spells: Squig Lure
 Loonboss on Giant Cave Squig (130)
 - General
 - Command Traits: Squig Whisperer
 - Moon-cutta
 - Artefacts of Power: Loonstone Teefcaps
 Squigboss (110)
-Fungoid Cave-Shaman (110)
-- Spells: Squig Lure
 BATTLELINE
 Squig Hoppers (190)
 - Squig Hopper Boss
@@ -99,6 +99,7 @@ function parseMeta(s: string): Meta {
 function isHeader(s: string): boolean {
     return s.startsWith('TOTAL') || s.startsWith('BATTLELINE') || s.startsWith('LEADER') || s.startsWith('TERRAIN') || s.startsWith('OTHER')
 }
+
 function parseSection(s: string, section: string): U[] {
     let inSection = false;
     let current: U | null;
@@ -108,21 +109,20 @@ function parseSection(s: string, section: string): U[] {
         if (inSection) {
             // new leader
             if (!line.startsWith('-') && !isHeader(line)) {
-                console.log(`new ${section}: ${line} `)
                 if (current)
                     retVal.push(current);
                 current = { name: line.split('(')[0].trim(), options: [] };
             }
 
             if (line.startsWith('-')) {
-                console.log("new option: " + line)
                 line = line.trim().substring(1);
+                line = line.replace('Artefacts of Power:', '')
+                line = line.replace('Command Traits:', '')
                 if (current)
-                    current.options.push(line);
+                    current.options.push(line.trim());
             }
         }
         if (line.startsWith(section)) {
-            console.log("in " + section)
             inSection = true;
         } else if (isHeader(line)) {
             if (current) {
@@ -130,7 +130,6 @@ function parseSection(s: string, section: string): U[] {
                 current = null;
             }
             inSection = false;
-            console.log("out of " + section)
         }
     });
     return retVal;

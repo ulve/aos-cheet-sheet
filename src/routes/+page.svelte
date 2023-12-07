@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { battleLine } from '$lib/gitz';
+	import { battleLine, leaders, other, type Unit, commandTraits, artifacts } from '$lib/gitz';
 	import { parse, type Parsed } from '$lib/parser';
+	import Layout from './+layout.svelte';
+	let debug = true;
 	let text = ``;
 	let info: Parsed = {
 		meta: {
@@ -13,104 +15,154 @@
 		other: [],
 		terrain: []
 	};
+
+	let units: Unit[] = [];
 	function papa() {
+		units = [];
 		info = parse(text);
+		let info2 = [...battleLine, ...leaders, ...other];
+		info.leaders.forEach((leader) => {
+			const h = info2.find((h) => h.name === leader.name);
+			if (h) {
+				if (leader.options) {
+					console.log('leader has options', leader.options);
+					leader.options.forEach((option) => {
+						const a = artifacts.find((a) => a.name === option);
+						if (a) {
+							console.log('found artifact', a);
+							h.abilities?.push(a);
+						}
+
+						const c = commandTraits.find((a) => a.name === option);
+						if (c) {
+							console.log('found command trait', c);
+							h.abilities?.push(c);
+						}
+					});
+				}
+				units.push(h);
+			}
+		});
+		info.battleline.forEach((bl) => {
+			const h = info2.find((h) => h.name === bl.name);
+			if (h) {
+				units.push(h);
+			}
+		});
+		info.other.forEach((o) => {
+			const h = info2.find((h) => h.name === o.name);
+			if (h) {
+				units.push(h);
+			}
+		});
+		// sort unit by name
+		units = units.sort((a, b) => {
+			if (a.name < b.name) {
+				return -1;
+			}
+			if (a.name > b.name) {
+				return 1;
+			}
+			return 0;
+		});
 	}
 </script>
 
-<div>
-	<h2>Meta</h2>
+{#if debug}
 	<div>
-		Grand Strategy: {info.meta.grandStrategy}<br />
-		Faction: {info.meta.faction}<br />
-		SubFaction: {info.meta.subfaction}<br />
+		<h2>Meta</h2>
+		<div>
+			Grand Strategy: {info.meta.grandStrategy}<br />
+			Faction: {info.meta.faction}<br />
+			SubFaction: {info.meta.subfaction}<br />
+		</div>
+		<h2>Leader</h2>
+		{#if info.leaders}
+			<div class="leaders">
+				{#each info.leaders as leader}
+					<div class="leader">
+						{leader.name}<br />
+						{#each leader.options as ability}
+							- {ability}<br />
+						{/each}
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if info.battleline}
+			<h2>Battleline</h2>
+			<div class="battlelines">
+				{#each info.battleline as battleLine}
+					<div class="bl">
+						{battleLine.name}<br />
+						{#each battleLine.options as ability}
+							- {ability}<br />
+						{/each}
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if info.other.length > 0}
+			<h2>Other</h2>
+			<div class="others">
+				{#each info.other as other}
+					<div class="other">
+						{other.name}<br />
+						{#each other.options as ability}
+							- {ability}<br />
+						{/each}
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if info.terrain}
+			<h2>Terrain</h2>
+			<div class="terrains">
+				{#each info.terrain as terrain}
+					<div class="terrain">
+						{terrain.name}<br />
+						{#each terrain.options as ability}
+							- {ability}<br />
+						{/each}
+					</div>
+				{/each}
+			</div>
+		{/if}
 	</div>
-	<h2>Leader</h2>
-	{#if info.leaders}
-		<div class="leaders">
-			{#each info.leaders as leader}
-				<div class="leader">
-					{leader.name}<br />
-					{#each leader.options as ability}
-						- {ability}<br />
-					{/each}
-				</div>
-			{/each}
-		</div>
-	{/if}
-	{#if info.battleline}
-		<h2>Battleline</h2>
-		<div class="battlelines">
-			{#each info.battleline as battleLine}
-				<div class="bl">
-					{battleLine.name}<br />
-					{#each battleLine.options as ability}
-						- {ability}<br />
-					{/each}
-				</div>
-			{/each}
-		</div>
-	{/if}
-	{#if info.other.length > 0}
-		<h2>Other</h2>
-		<div class="others">
-			{#each info.other as other}
-				<div class="other">
-					{other.name}<br />
-					{#each other.options as ability}
-						- {ability}<br />
-					{/each}
-				</div>
-			{/each}
-		</div>
-	{/if}
-	{#if info.terrain}
-		<h2>Terrain</h2>
-		<div class="terrains">
-			{#each info.terrain as terrain}
-				<div class="terrain">
-					{terrain.name}<br />
-					{#each terrain.options as ability}
-						- {ability}<br />
-					{/each}
-				</div>
-			{/each}
-		</div>
-	{/if}
-</div>
+{/if}
 
 <textarea bind:value={text} on:change={() => papa()} />
 
 <div class="container">
-	{#each battleLine as unit}
+	{#each units as unit}
 		<div class="unit">
 			<div class="statline">
 				<div class="name">
 					{unit.name}
 				</div>
 				<div>
-					<b>M: </b>{unit.movement}
+					<span class="bold">M: </span>{unit.movement}
 				</div>
 				<div>
-					<b>Sv: </b>{unit.save}
+					<span class="bold">Sv: </span>{unit.save}
 				</div>
 				<div>
-					<b>Br: </b>{unit.bravery}
+					<span class="bold">Br: </span>{unit.bravery}
 				</div>
 				<div>
-					<b>W: </b>{unit.wounds}
+					<span class="bold">W: </span>{unit.wounds}
 				</div>
 			</div>
 			{#if unit.missileWeapons}
 				<div class="weaponprofile">
 					<div class="weapon-header">
-						<div class="stat-header start">Missile</div>
-						<div class="stat-header">Rng</div>
-						<div class="stat-header">Att</div>
-						<div class="stat-header">Hit</div>
-						<div class="stat-header">Wnd</div>
-						<div class="stat-header">Rnd</div>
-						<div class="stat-header">Dam</div>
+						<div class="stat-header start bold">Missile</div>
+						<div class="stat-header bold">Rng</div>
+						<div class="stat-header bold">Att</div>
+						<div class="stat-header bold">Hit</div>
+						<div class="stat-header bold">Wnd</div>
+						<div class="stat-header bold">Rnd</div>
+						<div class="stat-header bold">Dam</div>
 					</div>
 					{#each unit.missileWeapons as weapon}
 						<div class="weapon">
@@ -140,13 +192,13 @@
 			{#if unit.meleeWeapons}
 				<div class="weaponprofile">
 					<div class="weapon-header">
-						<div class="stat-header start">Melee</div>
-						<div class="stat-header">Rng</div>
-						<div class="stat-header">Att</div>
-						<div class="stat-header">Hit</div>
-						<div class="stat-header">Wnd</div>
-						<div class="stat-header">Rnd</div>
-						<div class="stat-header">Dam</div>
+						<div class="stat-header start bold">Melee</div>
+						<div class="stat-header bold">Rng</div>
+						<div class="stat-header bold">Att</div>
+						<div class="stat-header bold">Hit</div>
+						<div class="stat-header bold">Wnd</div>
+						<div class="stat-header bold">Rnd</div>
+						<div class="stat-header bold">Dam</div>
 					</div>
 					{#each unit.meleeWeapons as weapon}
 						<div class="weapon">
@@ -175,21 +227,21 @@
 			{/if}
 			<div class="abilities">
 				{#if unit.champion}
-					<b>Champion: </b>
+					<span class="bold">Champion: </span>
 					{unit.champion}
 				{/if}
 
 				{#if unit.standard}
-					<b>Standard: </b>{unit.standard}
+					<span class="bold">Standard: </span>{unit.standard}
 				{/if}
 
 				{#if unit.musician}
-					<b>Musician: </b>{unit.musician}
+					<span class="bold">Musician: </span>{unit.musician}
 				{/if}
 
 				{#if unit.abilities}
 					{#each unit.abilities as ability}
-						<b>{ability.name}: </b>{ability.description}
+						<span class="bold">{ability.name}: </span>{ability.description}
 					{/each}
 				{/if}
 			</div>
@@ -226,7 +278,7 @@
 	}
 
 	.name {
-		font-weight: bold;
+		font-family: 'Montserrat', sans-serif;
 		font-size: 16px;
 	}
 
@@ -247,7 +299,6 @@
 	}
 
 	.stat-header {
-		font-weight: bold;
 		text-align: center;
 	}
 
@@ -273,6 +324,11 @@
 
 	.abilities {
 		margin-top: 1rem;
+	}
+
+	.bold {
+		font-weight: 500;
+		text-transform: uppercase;
 	}
 
 	textarea {
