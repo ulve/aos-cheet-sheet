@@ -276,6 +276,7 @@ const rockguts: Unit = {
 
   ]
 }
+
 const squigHerd: Unit = {
   name: "Squig Herd",
   movement: 'D6+5"',
@@ -305,6 +306,61 @@ const squigHerd: Unit = {
   abilities: [
     { name: 'Herding Squigs', description: 'Hero phase 2+ for each herder returns D3 squigs. 1 killed. ' },
     { name: 'Squigs Gone Wild', description: 'Each squig that flee on 3+ deals 1MW on enemy unit within 9". ' },
+  ]
+}
+
+const sneakySnufflers: Unit = {
+  name: "Sneaky Snufflers",
+  movement: '5"',
+  save: '6+',
+  bravery: '4',
+  wounds: '2',
+  meleeWeapons: [
+    {
+      name: 'Loonfungus Sickle',
+      range: '2"',
+      attacks: '3',
+      toHit: '4+',
+      toWound: '4+',
+      rend: '-1',
+      damage: '1'
+    },
+    {
+      name: 'Gnashers',
+      range: '1"',
+      attacks: '2',
+      toHit: '4+',
+      toWound: '4+',
+      rend: '-',
+      damage: '1'
+    }
+  ],
+  abilities: [
+    { name: 'Off Their ’Eads', description: '5+ ward. ' },
+    { name: 'Looncap Mushrooms', description: 'Start of movement. Roll 3+ (2+ if in moon) unit wholly within 12" 5+ ward if 6+ +1A. ' },
+  ]
+}
+
+const loonsmasha: Unit = {
+  name: "Loonsmasha Fanatics",
+  movement: '2D6"',
+  save: '6+',
+  bravery: '10',
+  wounds: '1',
+  meleeWeapons: [
+    {
+      name: 'Ball and Chain',
+      range: '3"',
+      attacks: 'D6',
+      toHit: '4+',
+      toWound: '3+',
+      rend: '-2',
+      damage: 'D3'
+    },
+  ],
+  abilities: [
+    { name: 'Release the Fanatics!', description: 'Start of charge setup withon 3". ' },
+    { name: 'Whirling Death', description: 'Strike first. ' },
   ]
 }
 
@@ -442,6 +498,79 @@ const squigboss: Unit = {
   abilities: [
     { name: 'Mycophile’s Pouch', description: 'Hero phase. one friendly squig unit within 3", +3 Mov/6 extra MW/+1A. ' },
     { name: 'Release Da Squigs', description: 'Each friendly squig herd wholly within 12" and have not moved can do a normal move. ' },
+  ]
+}
+
+const loonboss: Unit = {
+  name: "Loonboss",
+  movement: '5"',
+  save: '4+',
+  bravery: '5',
+  wounds: '5',
+  meleeWeapons: [
+    {
+      name: 'Moon-slicer',
+      range: '2"',
+      attacks: '5',
+      toHit: '3+',
+      toWound: '3+',
+      rend: '-1',
+      damage: 'D3'
+    },
+  ],
+  abilities: [
+    { name: 'Dead Tricksy', description: '6+ ward. ' },
+    { name: 'I’m Da Boss, Now Stab ’Em Good!', description: 'All-out attacks cause extra MW on 6 to wound. ' },
+  ]
+}
+
+const madcap: Unit = {
+  name: "Madcap Shaman",
+  movement: '5"',
+  save: '6+',
+  bravery: '5',
+  wounds: '4',
+  meleeWeapons: [
+    {
+      name: 'Moon Staff',
+      range: '2"',
+      attacks: '1',
+      toHit: '4+',
+      toWound: '4+',
+      rend: '-1',
+      damage: 'D3'
+    },
+  ],
+  abilities: [
+    { name: 'WIZARD', description: '1 cast 1 unbind. ' },
+    { name: 'Madcap Mushroom', description: 'Once per battle 1 extra spell. If roll double D3MW. ' },
+    { name: 'Night Shroud', description: 'CV5 range 12" -1 hit by missile. ' },
+  ]
+}
+
+const skragrott: Unit = {
+  name: "Skragrott, the Loonking",
+  movement: '5"',
+  save: '5+',
+  bravery: '6',
+  wounds: '6',
+  meleeWeapons: [
+    {
+      name: 'Da Moon Onna Stikk',
+      range: '2"',
+      attacks: '3',
+      toHit: '3+',
+      toWound: '3+',
+      rend: '-1',
+      damage: 'D3'
+    },
+  ],
+  abilities: [
+    { name: 'WIZARD', description: '2 cast 2 unbind. All spells. ' },
+    { name: 'Babbling Wand', description: 'Once per turn issue command for free. ' },
+    { name: 'Da Moon Onna Stikk', description: 'Moon aura 12". ' },
+    { name: 'The Loonking’s Entreaty', description: 'Once per battle decide if the moon will stay. ' },
+    { name: 'Fangz of da Bad Moon', description: 'CV3 range 24" roll dice equal to CV 3+ gives MW. ' },
   ]
 }
 
@@ -657,6 +786,8 @@ export const other: Unit[] = [
   fellwater,
   squigHerd,
   rockguts,
+  sneakySnufflers,
+  loonsmasha,
 ]
 
 export const leaders: Unit[] = [
@@ -664,4 +795,7 @@ export const leaders: Unit[] = [
   fungoid,
   loonbossOnGiantCaveSquig,
   squigboss,
+  loonboss,
+  madcap,
+  skragrott,
 ]

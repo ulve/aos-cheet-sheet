@@ -107,6 +107,7 @@ function parseSection(s: string, section: string): U[] {
 
     s.split('\n').forEach(line => {
         if (inSection) {
+            line = line.trim();
             // new leader
             if (!line.startsWith('-') && !isHeader(line)) {
                 if (current)
