@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { battleLine, leaders, other, type Unit, options } from '$lib/gitz';
+	import { units, type Unit, options } from '$lib/gitz';
 	import { parse, type Parsed } from '$lib/parser';
-	let debug = true;
+	let debug = false;
 	let text = ``;
 	let parsedList: Parsed = {
 		meta: {
@@ -15,13 +15,13 @@
 		terrain: []
 	};
 
-	let units: Unit[] = [];
+	let u: Unit[] = [];
 	function papa() {
-		units = [];
+		u = [];
 		parsedList = parse(text);
-		let allUnits = [...battleLine, ...leaders, ...other];
+
 		parsedList.leaders.forEach((leader) => {
-			const h = allUnits.find((h) => h.name === leader.name);
+			const h = units.find((h) => h.name === leader.name);
 			if (h) {
 				if (leader.options) {
 					console.log('leader has options', leader.options);
@@ -33,23 +33,23 @@
 						}
 					});
 				}
-				units.push(h);
+				u.push(h);
 			}
 		});
 		parsedList.battleline.forEach((bl) => {
-			const h = allUnits.find((h) => h.name === bl.name);
+			const h = units.find((h) => h.name === bl.name);
 			if (h) {
-				units.push(h);
+				u.push(h);
 			}
 		});
 		parsedList.other.forEach((o) => {
-			const h = allUnits.find((h) => h.name === o.name);
+			const h = units.find((h) => h.name === o.name);
 			if (h) {
-				units.push(h);
+				u.push(h);
 			}
 		});
 		// sort unit by name
-		units = units.sort((a, b) => {
+		u = u.sort((a, b) => {
 			if (a.name < b.name) {
 				return -1;
 			}
@@ -124,10 +124,10 @@
 	</div>
 {/if}
 
-<textarea bind:value={text} on:change={() => papa()} />
+<textarea class="no-print" bind:value={text} on:change={() => papa()} />
 
 <div class="container">
-	{#each units as unit}
+	{#each u as unit}
 		<div class="unit">
 			<div class="statline">
 				<div class="name">
@@ -218,6 +218,25 @@
 					{/each}
 				</div>
 			{/if}
+			{#if unit.damageTable}
+				<div class="weaponprofile space">
+					<div class="weapon-header">
+						<div class="stat-header bold">{unit.damageTable.header[0]}</div>
+						<div class="stat-header bold">{unit.damageTable.header[1]}</div>
+						<div class="stat-header bold">{unit.damageTable.header[2]}</div>
+						<div class="stat-header bold">{unit.damageTable.header[3]}</div>
+					</div>
+					{#each unit.damageTable.rows as row}
+						<div class="weapon">
+							<div class="stat">{row[0]}</div>
+							<div class="stat">{row[1]}</div>
+							<div class="stat">{row[2]}</div>
+							<div class="stat">{row[3]}</div>
+						</div>
+					{/each}
+				</div>
+			{/if}
+
 			<div class="abilities">
 				{#if unit.champion}
 					<span class="bold">Champion: </span>
@@ -251,6 +270,8 @@
 		font-size: 12px;
 		font-weight: 300;
 		width: 100vw;
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
 	}
 
 	.unit {
@@ -327,5 +348,16 @@
 	textarea {
 		width: 100%;
 		height: 200px;
+	}
+
+	.space {
+		margin-top: 1rem;
+	}
+
+	@media print {
+		.no-print,
+		.no-print * {
+			display: none !important;
+		}
 	}
 </style>

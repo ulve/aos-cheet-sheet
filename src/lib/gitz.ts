@@ -1,4 +1,5 @@
 export interface Unit {
+  type: string,
   name: string,
   movement: string,
   save: string,
@@ -10,8 +11,13 @@ export interface Unit {
   musician?: string,
   champion?: string,
   abilities?: Ability[],
+  damageTable?: DamageTable
 }
 
+interface DamageTable {
+  header: string[],
+  rows: string[][]
+}
 interface Weapon {
   name: string,
   range: string,
@@ -30,6 +36,7 @@ interface Ability {
 
 // Battleline
 const shoota: Unit = {
+  type: "battleline",
   name: "Moonclan Shootas",
   movement: '5"',
   save: '6+',
@@ -73,6 +80,7 @@ const shoota: Unit = {
 }
 
 const stabba: Unit = {
+  type: "battleline",
   name: "Moonclan Stabbas",
   movement: '5"',
   save: '6+',
@@ -114,6 +122,7 @@ const stabba: Unit = {
 }
 
 const hopper: Unit = {
+  type: "battleline",
   name: "Squig Hoppers",
   movement: 'D6+10"',
   save: '6+',
@@ -145,6 +154,7 @@ const hopper: Unit = {
 
 // Other
 const boing: Unit = {
+  type: "other",
   name: "Boingrot Bounderz",
   movement: 'D6+7"',
   save: '4+',
@@ -179,6 +189,7 @@ const boing: Unit = {
 }
 
 const dankhold: Unit = {
+  type: "other",
   name: "Dankhold Troggoths",
   movement: '6"',
   save: '4+',
@@ -204,6 +215,7 @@ const dankhold: Unit = {
 }
 
 const fellwater: Unit = {
+  type: "other",
   name: "Fellwater Troggoths",
   movement: '6"',
   save: '4+',
@@ -241,6 +253,7 @@ const fellwater: Unit = {
 }
 
 const rockguts: Unit = {
+  type: "other",
   name: "Rockgut Troggoths",
   movement: '6"',
   save: '4+',
@@ -278,6 +291,7 @@ const rockguts: Unit = {
 }
 
 const squigHerd: Unit = {
+  type: "other",
   name: "Squig Herd",
   movement: 'D6+5"',
   save: '6+',
@@ -310,6 +324,7 @@ const squigHerd: Unit = {
 }
 
 const sneakySnufflers: Unit = {
+  type: "other",
   name: "Sneaky Snufflers",
   movement: '5"',
   save: '6+',
@@ -342,6 +357,7 @@ const sneakySnufflers: Unit = {
 }
 
 const loonsmasha: Unit = {
+  type: "other",
   name: "Loonsmasha Fanatics",
   movement: '2D6"',
   save: '6+',
@@ -366,6 +382,7 @@ const loonsmasha: Unit = {
 
 // Heroes
 const troggboss: Unit = {
+  type: "leader",
   name: "Dankhold Troggboss",
   movement: '6"',
   save: '4+',
@@ -392,6 +409,7 @@ const troggboss: Unit = {
 }
 
 const fungoid: Unit = {
+  type: "leader",
   name: "Fungoid Cave-Shaman",
   movement: '5"',
   save: '6+',
@@ -427,6 +445,7 @@ const fungoid: Unit = {
 }
 
 const loonbossOnGiantCaveSquig: Unit = {
+  type: "leader",
   name: "Loonboss on Giant Cave Squig",
   movement: 'D6+7"',
   save: '4+',
@@ -470,6 +489,7 @@ const loonbossOnGiantCaveSquig: Unit = {
 }
 
 const squigboss: Unit = {
+  type: "leader",
   name: "Squigboss",
   movement: '5"',
   save: '6+',
@@ -502,6 +522,7 @@ const squigboss: Unit = {
 }
 
 const loonboss: Unit = {
+  type: "leader",
   name: "Loonboss",
   movement: '5"',
   save: '4+',
@@ -525,6 +546,7 @@ const loonboss: Unit = {
 }
 
 const madcap: Unit = {
+  type: "leader",
   name: "Madcap Shaman",
   movement: '5"',
   save: '6+',
@@ -549,6 +571,7 @@ const madcap: Unit = {
 }
 
 const skragrott: Unit = {
+  type: "leader",
   name: "Skragrott, the Loonking",
   movement: '5"',
   save: '5+',
@@ -572,6 +595,52 @@ const skragrott: Unit = {
     { name: 'The Loonking’s Entreaty', description: 'Once per battle decide if the moon will stay. ' },
     { name: 'Fangz of da Bad Moon', description: 'CV3 range 24" roll dice equal to CV 3+ gives MW. ' },
   ]
+}
+
+const trugg: Unit = {
+  type: "leader",
+  name: "Trugg",
+  movement: '6"',
+  save: '4+',
+  bravery: '8',
+  wounds: '16',
+  meleeWeapons: [
+    {
+      name: 'Ironshell Club',
+      range: '3"',
+      attacks: '*',
+      toHit: '3+',
+      toWound: '3+',
+      rend: '-2',
+      damage: 'D6'
+    },
+    {
+      name: 'Mighty Antlers',
+      range: '3"',
+      attacks: '2',
+      toHit: '*',
+      toWound: '2+',
+      rend: '-2',
+      damage: 'D3+3'
+    },
+  ],
+  abilities: [
+    { name: 'WARMASTER', description: 'Works as a general. ' },
+    { name: 'Malfunctioning Leystone', description: 'Roll * dice and choose. (1 D3 MW) (2 +1A) (3 -1 rnd) (4 2+ command point) (5 only 6 to hitt with missile) (6 5+ ward) ' },
+    { name: 'Crushing Grip', description: 'End of combat 1" slay model on W+. ' },
+    { name: 'Regeneration', description: 'Hero phase heal D3. ' },
+    { name: 'Imbued with Life', description: 'Hero phase heal 3. ' },
+  ],
+  damageTable: {
+    header: ['Wounds', 'Leystone', 'Club', 'Antlers'],
+    rows: [
+      ['0-6', '4', '4', '2+'],
+      ['7-9', '3', '3', '3+'],
+      ['10-12', '2', '2', '4+'],
+      ['13+', '1', '1', '5+'],
+    ]
+  }
+
 }
 
 // Artefacts
@@ -774,13 +843,12 @@ export const options: Ability[] = [
   curseOfTheSpiderGod,
 ]
 
-export const battleLine: Unit[] = [
+export const units: Unit[] = [
+  // battleline
   shoota,
   stabba,
   hopper,
-]
-
-export const other: Unit[] = [
+  // other
   boing,
   dankhold,
   fellwater,
@@ -788,9 +856,7 @@ export const other: Unit[] = [
   rockguts,
   sneakySnufflers,
   loonsmasha,
-]
-
-export const leaders: Unit[] = [
+  // leaders
   troggboss,
   fungoid,
   loonbossOnGiantCaveSquig,
@@ -798,4 +864,5 @@ export const leaders: Unit[] = [
   loonboss,
   madcap,
   skragrott,
+  trugg,
 ]
