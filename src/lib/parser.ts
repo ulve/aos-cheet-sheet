@@ -82,13 +82,13 @@ function parseMeta(s: string): Meta {
     let m: Meta = { faction: 'unknown', subfaction: 'unknown', grandStrategy: 'unknown' };
     s.split('\n').forEach(line => {
         // meta
-        if (line.startsWith('- Army Faction:')) {
+        if (line.trim().startsWith('- Army Faction:')) {
             m.faction = line.split(':')[1].trim();
         }
-        if (line.startsWith('- Subfaction:')) {
+        if (line.trim().startsWith('- Subfaction:')) {
             m.subfaction = line.split(':')[1].trim();
         }
-        if (line.startsWith('- Grand Strategy:')) {
+        if (line.trim().startsWith('- Grand Strategy:')) {
             m.grandStrategy = line.split(':')[1].trim();
         }
     });

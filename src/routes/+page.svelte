@@ -19,9 +19,9 @@
 	function papa() {
 		u = [];
 		parsedList = parse(text);
-
+		console.log(parsedList.meta);
 		parsedList.leaders.forEach((leader) => {
-			const h = units.find((h) => h.name === leader.name);
+			const h = units.find((h) => h.name === leader.name && h.faction === parsedList.meta.faction);
 			if (h) {
 				if (leader.options) {
 					console.log('leader has options', leader.options);
@@ -37,13 +37,13 @@
 			}
 		});
 		parsedList.battleline.forEach((bl) => {
-			const h = units.find((h) => h.name === bl.name);
+			const h = units.find((h) => h.name === bl.name && h.faction === parsedList.meta.faction);
 			if (h) {
 				u.push(h);
 			}
 		});
 		parsedList.other.forEach((o) => {
-			const h = units.find((h) => h.name === o.name);
+			const h = units.find((h) => h.name === o.name && h.faction === parsedList.meta.faction);
 			if (h) {
 				u.push(h);
 			}
@@ -123,9 +123,7 @@
 		{/if}
 	</div>
 {/if}
-
 <textarea class="no-print" bind:value={text} on:change={() => papa()} />
-
 <div class="container">
 	{#each u as unit}
 		<div class="unit">
