@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { units, type Unit, options } from '$lib/gitz';
+	import { units, type Unit, options } from '$lib/units';
 	import { parse, type Parsed } from '$lib/parser';
 	let debug = false;
 	let text = ``;

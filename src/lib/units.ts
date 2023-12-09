@@ -1,4 +1,5 @@
 import u from "./gitz.json"
+import u2 from "./maggotkin.json"
 import o from "./gitzOptions.json"
 export interface Unit {
   faction: string,
@@ -38,4 +39,4 @@ interface Ability {
 }
 
 export const options: Ability[] = o;
-export const units: Unit[] = u;
+export const units: Unit[] = [...u, ...u2];

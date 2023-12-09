@@ -1,0 +1,234 @@
+[
+    {
+        "faction": "Maggotkin of Nurgle",
+        "type": "leader",
+        "name": "The Glottkin",
+        "movement": "5\"",
+        "save": "4+",
+        "bravery": "9",
+        "wounds": "20",
+        "missileWeapons": [
+            {
+                "name": "Otto’s Gut-spray",
+                "range": "12\"",
+                "attacks": "*",
+                "toHit": "3+",
+                "toWound": "3+",
+                "rend": "-2",
+                "damage": "1"
+            }
+        ],
+        "meleeWeapons": [
+            {
+                "name": "Ghurk’s Tentacle",
+                "range": "3\"",
+                "attacks": "*",
+                "toHit": "3+",
+                "toWound": "2+",
+                "rend": "-2",
+                "damage": "3"
+            },
+            {
+                "name": "Ghurk’s Lamprey Maw",
+                "range": "1\"",
+                "attacks": "3",
+                "toHit": "3+",
+                "toWound": "2+",
+                "rend": "-2",
+                "damage": "3"
+            },
+            {
+                "name": "Otto’s Scythe",
+                "range": "1\"",
+                "attacks": "4",
+                "toHit": "3+",
+                "toWound": "3+",
+                "rend": "-1",
+                "damage": "D3"
+            }
+        ],
+        "damageTable": {
+            "header": [
+                "Wounds",
+                "Gut-spray",
+                "Tentacle",
+                "Loathsome Flesh"
+            ],
+            "rows": [
+                [
+                    "0-6",
+                    "7",
+                    "4",
+                    "5"
+                ],
+                [
+                    "7-12",
+                    "6",
+                    "3",
+                    "4"
+                ],
+                [
+                    "13-16",
+                    "5",
+                    "2",
+                    "3"
+                ],
+                [
+                    "17+",
+                    "4",
+                    "1",
+                    "2"
+                ]
+            ]
+        },
+        "abilities": [
+            {
+                "name": "Warmaster",
+                "description": "Works as general. "
+            },
+            {
+                "name": "Wizard",
+                "description": "2 casts 2 unbinds. "
+            },
+            {
+                "name": "Blightkrieg",
+                "description": "Enemy movment withon 12\". Another unit within 12\" can charge. "
+            },
+            {
+                "name": "Horrific Opponent",
+                "description": "Within 3\" 2D6 equal or over bravery else retreat. "
+            },
+            {
+                "name": "Mountain of Loathsome Flesh",
+                "description": "Rampage 3\" 3+ MW. "
+            },
+            {
+                "name": "Abundance of Flesh",
+                "description": "CV6 range 14\". Mortal +1W until next hero phase. "
+            }
+        ]
+    },
+    {
+        "faction": "Maggotkin of Nurgle",
+        "type": "leader",
+        "name": "Great Unclean One",
+        "movement": "4\"",
+        "save": "4+",
+        "bravery": "10",
+        "wounds": "18",
+        "missileWeapons": [
+            {
+                "name": "Noxious Bile",
+                "range": "7\"",
+                "attacks": "D6",
+                "toHit": "3+",
+                "toWound": "*",
+                "rend": "-3",
+                "damage": "2"
+            }
+        ],
+        "meleeWeapons": [
+            {
+                "name": "Bilesword",
+                "range": "2\"",
+                "attacks": "4+",
+                "toHit": "4+",
+                "toWound": "3+",
+                "rend": "-2",
+                "damage": "4"
+            },
+            {
+                "name": "Doomsday Bell",
+                "range": "1\"",
+                "attacks": "5",
+                "toHit": "3+",
+                "toWound": "3+",
+                "rend": "-1",
+                "damage": "2"
+            },
+            {
+                "name": "Bileblade",
+                "range": "1\"",
+                "attacks": "4",
+                "toHit": "3+",
+                "toWound": "3+",
+                "rend": "-1",
+                "damage": "3"
+            },
+            {
+                "name": "Plague Flail",
+                "range": "1\"",
+                "attacks": "5",
+                "toHit": "3+",
+                "toWound": "3+",
+                "rend": "-1",
+                "damage": "3"
+            },
+            {
+                "name": "Host of Nurglings",
+                "range": "1\"",
+                "attacks": "*",
+                "toHit": "5+",
+                "toWound": "5+",
+                "rend": "-",
+                "damage": "1"
+            }
+        ],
+        "damageTable": {
+            "header": [
+                "Wounds",
+                "Nurglings",
+                "Bile",
+                "Loathsome Flesh"
+            ],
+            "rows": [
+                [
+                    "0-6",
+                    "15",
+                    "2+",
+                    "4"
+                ],
+                [
+                    "7-12",
+                    "10",
+                    "3+",
+                    "3"
+                ],
+                [
+                    "13-16",
+                    "5",
+                    "4+",
+                    "2"
+                ],
+                [
+                    "17+",
+                    "0",
+                    "5+",
+                    "1"
+                ]
+            ]
+        },
+        "abilities": [
+            {
+                "name": "Wizard",
+                "description": "2 casts 2 unbinds. "
+            },
+            {
+                "name": "Bloated with Corruption",
+                "description": "Ward of 6 give 1 disease 1 in 3\". "
+            },
+            {
+                "name": "Putrid Offering",
+                "description": "If bileblade take 1MW 1 extra spell. "
+            },
+            {
+                "name": "Mountain of Loathsome Flesh",
+                "description": "Rampage 3\" 2+ MW. "
+            },
+            {
+                "name": "Reverberating Summons",
+                "description": "Domesday bell 2-5 1 corruptionpoint 6 D3. "
+            }
+        ]
+    }
+]
