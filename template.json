@@ -1,0 +1,40 @@
+{
+  "faction": "Cities of Sigmar",
+  "type": "leader",
+  "name": "",
+  "movement": "\"",
+  "save": "+",
+  "bravery": "",
+  "wounds": "",
+  "missileWeapons": [
+    {
+      "name": "",
+      "range": "\"",
+      "attacks": "",
+      "toHit": "+",
+      "toWound": "+",
+      "rend": "-",
+      "damage": ""
+    }
+  ],
+  "meleeWeapons": [
+    {
+      "name": "",
+      "range": "\"",
+      "attacks": "",
+      "toHit": "+",
+      "toWound": "+",
+      "rend": "-",
+      "damage": ""
+    }
+  ],
+  "champion": ". ",
+  "standard": ". ",
+  "musician": ". ",
+  "abilities": [
+    {
+      "name": "",
+      "description": ". "
+    }
+  ]
+}
