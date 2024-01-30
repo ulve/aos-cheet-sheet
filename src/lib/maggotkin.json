@@ -732,5 +732,268 @@
         "description": "3 answer 14\" range subtract current battle round from bravery. "
       }
     ]
+  },
+  {
+    "faction": "Maggotkin of Nurgle",
+    "type": "battleline",
+    "name": "Plaguebearers",
+    "movement": "4\"",
+    "save": "6+",
+    "bravery": "10",
+    "wounds": "2",
+    "meleeWeapons": [
+      {
+        "name": "Plaguesword",
+        "range": "1\"",
+        "attacks": "1",
+        "toHit": "4+",
+        "toWound": "3+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "champion": "+1A. ",
+    "standard": "Battleshock 1 returns 1 model. ",
+    "musician": "Enemy rerolls battleshock of 1 within 6\". ",
+    "abilities": [
+      {
+        "name": "Cloud of Flies",
+        "description": "-1 to hit for missile while 5+ models. "
+      }
+    ]
+  },
+  {
+    "faction": "Maggotkin of Nurgle",
+    "type": "battleline",
+    "name": "Putrid Blightkings",
+    "movement": "4\"",
+    "save": "4+",
+    "bravery": "8",
+    "wounds": "4",
+    "meleeWeapons": [
+      {
+        "name": "Blighted Weapon",
+        "range": "1\"",
+        "attacks": "5",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-1",
+        "damage": "1"
+      }
+    ],
+    "champion": "+1W. ",
+    "standard": "+1B. ",
+    "musician": "Enemy rerolls battleshock of 1 within 6\". ",
+    "abilities": [
+      {
+        "name": "Relentless Attackers",
+        "description": "After combat. Enemy with 3 W or less within 3\" roll die > W get 1MW. "
+      }
+    ]
+  },
+  {
+    "faction": "Maggotkin of Nurgle",
+    "type": "other",
+    "name": "Beasts of Nurgle",
+    "movement": "5\"",
+    "save": "5+",
+    "bravery": "10",
+    "wounds": "8",
+    "meleeWeapons": [
+      {
+        "name": "Filthy Claws",
+        "range": "1\"",
+        "attacks": "4",
+        "toHit": "4+",
+        "toWound": "3+",
+        "rend": "-1",
+        "damage": "2"
+      },
+      {
+        "name": "Slobbering Maw",
+        "range": "1\"",
+        "attacks": "D6",
+        "toHit": "4+",
+        "toWound": "3+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Relentless Attackers",
+        "description": "Run, retreat and charge and counts as flying. "
+      },
+      {
+        "name": "Diseased Slime Trails",
+        "description": "Before retreat enemy units within 3\" get disease point on 4+. "
+      },
+      {
+        "name": "Diseased Slime Trails",
+        "description": "After charge enemy within 1\" gets D3MW on 2+. "
+      }
+    ]
+  },
+  {
+    "faction": "Maggotkin of Nurgle",
+    "type": "other",
+    "name": "Nurglings",
+    "movement": "4\"",
+    "save": "6+",
+    "bravery": "10",
+    "wounds": "4",
+    "meleeWeapons": [
+      {
+        "name": "Tiny Razor-sharp Teeth",
+        "range": "1\"",
+        "attacks": "5",
+        "toHit": "5+",
+        "toWound": "5+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Endless Swarm",
+        "description": "In the battleshock phase heal all wounds. "
+      },
+      {
+        "name": "Hidden Infestations",
+        "description": "Set up in reserve. First move wholly outside deployment within 3\" of terrain more than 9\" of enemies. "
+      },
+      {
+        "name": "Diseased Slime Trails",
+        "description": "After charge enemy within 1\" gets D3MW on 2+. "
+      }
+    ]
+  },
+  {
+    "faction": "Maggotkin of Nurgle",
+    "type": "other",
+    "name": "Pusgoyle Blightlords",
+    "movement": "8\"",
+    "save": "4+",
+    "bravery": "8",
+    "wounds": "8",
+    "meleeWeapons": [
+      {
+        "name": "Blighted Weapon",
+        "range": "1\"",
+        "attacks": "5",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-1",
+        "damage": "1"
+      },
+      {
+        "name": "Claws, Mouthparts and Sting",
+        "range": "1\"",
+        "attacks": "6",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Elite",
+        "description": "Can issue self commands. "
+      },
+      {
+        "name": "Fly",
+        "description": "Can fly. "
+      },
+      {
+        "name": "Wrack and Ruin",
+        "description": "After charge all enemies units within 1\" D3MW on 4+(2+ if dolorous) for each model. "
+      },
+      {
+        "name": "Relentless Attackers",
+        "description": "After combat. Enemy with 3 W or less within 3\" roll die > W get 1MW. "
+      }
+    ]
+  },
+  {
+    "faction": "Maggotkin of Nurgle",
+    "type": "other",
+    "name": "Pusgoyle Blightlords",
+    "movement": "8\"",
+    "save": "4+",
+    "bravery": "8",
+    "wounds": "8",
+    "meleeWeapons": [
+      {
+        "name": "Blighted Weapon",
+        "range": "1\"",
+        "attacks": "5",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-1",
+        "damage": "1"
+      },
+      {
+        "name": "Claws, Mouthparts and Sting",
+        "range": "1\"",
+        "attacks": "6",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Elite",
+        "description": "Can issue self commands. "
+      },
+      {
+        "name": "Fly",
+        "description": "Can fly. "
+      },
+      {
+        "name": "Wrack and Ruin",
+        "description": "After charge all enemies units within 1\" D3MW on 4+(2+ if dolorous) for each model. "
+      }
+    ]
+  },
+  {
+    "faction": "Maggotkin of Nurgle",
+    "type": "other",
+    "name": "Rotmire Creed",
+    "movement": "5\"",
+    "save": "5+",
+    "bravery": "6",
+    "wounds": "1",
+    "missileWeapons": [
+      {
+        "name": "Blowpipe",
+        "range": "14\"",
+        "attacks": "2",
+        "toHit": "4+",
+        "toWound": "3+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "meleeWeapons": [
+      {
+        "name": "Bilewood Weapons",
+        "range": "1\"",
+        "attacks": "2",
+        "toHit": "4+",
+        "toWound": "3+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "champion": "+1A. ",
+    "abilities": [
+      {
+        "name": "Virulent Concoctions",
+        "description": "All phases where this unit inflicts diesease all other enemy units within 3\" gets one. "
+      }
+    ]
   }
 ]
