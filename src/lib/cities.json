@@ -389,5 +389,121 @@
         "description": "On all out attack/defense one other unit with hold the line wholly within 12\" get the same for free. "
       }
     ]
+  },
+  {
+    "faction": "Cities of Sigmar",
+    "type": "other",
+    "name": "Freeguild Cavaliers",
+    "movement": "10\"",
+    "save": "3+",
+    "bravery": "7",
+    "wounds": "2",
+    "meleeWeapons": [
+      {
+        "name": "Cavalier Weapon",
+        "range": "1\"",
+        "attacks": "3",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-1",
+        "damage": "1"
+      },
+      {
+        "name": "Arch-Knight’s Blade",
+        "range": "1\"",
+        "attacks": "4",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-2",
+        "damage": "2"
+      },
+      {
+        "name": "Steel-shod Hooves",
+        "range": "1\"",
+        "attacks": "2",
+        "toHit": "4+",
+        "toWound": "4+",
+        "rend": "-",
+        "damage": "1"
+      }
+    ],
+    "champion": "Armed with Arch-Knight´s blade. ",
+    "standard": "+1B. ",
+    "abilities": [
+      {
+        "name": "Devastating Charge",
+        "description": "+1D and +1 Rend on charge. "
+      }
+    ]
+  },
+  {
+    "faction": "Cities of Sigmar",
+    "type": "other",
+    "name": "Freeguild Command Corps",
+    "movement": "5\"",
+    "save": "4+",
+    "bravery": "7",
+    "wounds": "3",
+    "meleeWeapons": [
+      {
+        "name": "Sigmarite Great Weapon",
+        "range": "2\"",
+        "attacks": "4",
+        "toHit": "3+",
+        "toWound": "3+",
+        "rend": "-1",
+        "damage": "D3"
+      },
+      {
+        "name": "Enchanted Rapier",
+        "range": "1\"",
+        "attacks": "1",
+        "toHit": "2+",
+        "toWound": "2+",
+        "rend": "-3",
+        "damage": "D6"
+      },
+      {
+        "name": "Assortment of Weapons",
+        "range": "1\"",
+        "attacks": "2",
+        "toHit": "3+",
+        "toWound": "4+",
+        "rend": "-",
+        "damage": "1"
+      },
+      {
+        "name": "Gargoylian Bite",
+        "range": "1\"",
+        "attacks": "3",
+        "toHit": "4+",
+        "toWound": "3+",
+        "rend": "-1",
+        "damage": "D3"
+      }
+    ],
+    "standard": "Great Herald has the TOTEM keyword. ",
+    "abilities": [
+      {
+        "name": "The Marshal’s Retinue",
+        "description": "At the start of the first battleround select marchal and while this unit is within 3\" 4+ ward. "
+      },
+      {
+        "name": "Sawbones",
+        "description": "3 units wholly within 12\" Heal D3 W or bring back models with D3 wounds. "
+      },
+      {
+        "name": "Dispatch Spies",
+        "description": "Once per turn when enemy issues command. 4+ cancels command. "
+      },
+      {
+        "name": "Sound the Advance",
+        "description": "+1 run and charge for units wholly within 12\". +D3\" for retreat for units with Great Herald. "
+      },
+      {
+        "name": "Tune of the Corpus Somni",
+        "description": "If models flee wholly within 12\" this unit on 4+ the model does not flee. "
+      }
+    ]
   }
 ]
