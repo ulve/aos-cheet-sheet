@@ -60,95 +60,96 @@ TERRAIN
 1 x Bad Moon Loonshrine (0)
 TOTAL POINTS: 970/1000
 Created with Warhammer Age of Sigmar: The App`;
+
 interface U {
-    name: string;
-    options: string[];
+  name: string;
+  options: string[];
 }
 
 interface Meta {
-    faction: string;
-    subfaction: string;
-    grandStrategy: string;
+  faction: string;
+  subfaction: string;
+  grandStrategy: string;
 }
 export interface Parsed {
-    meta: Meta;
-    leaders: U[];
-    battleline: U[];
-    terrain: U[];
-    other: U[];
+  meta: Meta;
+  leaders: U[];
+  battleline: U[];
+  terrain: U[];
+  other: U[];
 }
 
 function parseMeta(s: string): Meta {
-    let m: Meta = { faction: 'unknown', subfaction: 'unknown', grandStrategy: 'unknown' };
-    s.split('\n').forEach(line => {
-        // meta
-        if (line.trim().startsWith('- Army Faction:')) {
-            m.faction = line.split(':')[1].trim();
-        }
-        if (line.trim().startsWith('- Subfaction:')) {
-            m.subfaction = line.split(':')[1].trim();
-        }
-        if (line.trim().startsWith('- Grand Strategy:')) {
-            m.grandStrategy = line.split(':')[1].trim();
-        }
-    });
+  let m: Meta = { faction: 'unknown', subfaction: 'unknown', grandStrategy: 'unknown' };
+  s.split('\n').forEach(line => {
+    // meta
+    if (line.trim().startsWith('- Army Faction:')) {
+      m.faction = line.split(':')[1].trim();
+    }
+    if (line.trim().startsWith('- Subfaction:')) {
+      m.subfaction = line.split(':')[1].trim();
+    }
+    if (line.trim().startsWith('- Grand Strategy:')) {
+      m.grandStrategy = line.split(':')[1].trim();
+    }
+  });
 
-    return m;
+  return m;
 }
 
 function isHeader(s: string): boolean {
-    return s.startsWith('TOTAL') || s.startsWith('BATTLELINE') || s.startsWith('LEADER') || s.startsWith('TERRAIN') || s.startsWith('OTHER')
+  return s.startsWith('TOTAL') || s.startsWith('BATTLELINE') || s.startsWith('LEADER') || s.startsWith('TERRAIN') || s.startsWith('OTHER')
 }
 
 function parseSection(s: string, section: string): U[] {
-    let inSection = false;
-    let current: U | null;
-    let retVal: U[] = [];
+  let inSection = false;
+  let current: U | null;
+  let retVal: U[] = [];
 
-    s.split('\n').forEach(line => {
-        if (inSection) {
-            line = line.trim();
-            // new leader
-            if (!line.startsWith('-') && !isHeader(line)) {
-                if (current)
-                    retVal.push(current);
-                current = { name: line.split('(')[0].trim(), options: [] };
-            }
+  s.split('\n').forEach(line => {
+    if (inSection) {
+      line = line.trim();
+      // new leader
+      if (!line.startsWith('-') && !isHeader(line)) {
+        if (current)
+          retVal.push(current);
+        current = { name: line.split('(')[0].trim(), options: [] };
+      }
 
-            if (line.startsWith('-')) {
-                line = line.trim().substring(1);
-                line = line.replace('Artefacts of Power:', '')
-                line = line.replace('Command Traits:', '')
-                line = line.replace('Spells:', '')
-                if (current)
-                    current.options.push(line.trim());
-            }
-        }
-        if (line.startsWith(section)) {
-            inSection = true;
-        } else if (isHeader(line)) {
-            if (current) {
-                retVal.push(current);
-                current = null;
-            }
-            inSection = false;
-        }
-    });
-    return retVal;
+      if (line.startsWith('-')) {
+        line = line.trim().substring(1);
+        line = line.replace('Artefacts of Power:', '')
+        line = line.replace('Command Traits:', '')
+        line = line.replace('Spells:', '')
+        if (current)
+          current.options.push(line.trim());
+      }
+    }
+    if (line.startsWith(section)) {
+      inSection = true;
+    } else if (isHeader(line)) {
+      if (current) {
+        retVal.push(current);
+        current = null;
+      }
+      inSection = false;
+    }
+  });
+  return retVal;
 }
 
 export function parse(s: string): Parsed {
-    let m = parseMeta(s);
-    let leaders = parseSection(s, "LEADERS");
-    let battleline = parseSection(s, "BATTLELINE");
-    let other = parseSection(s, "OTHER");
-    let terrain = parseSection(s, "TERRAIN");
+  let m = parseMeta(s);
+  let leaders = parseSection(s, "LEADERS");
+  let battleline = parseSection(s, "BATTLELINE");
+  let other = parseSection(s, "OTHER");
+  let terrain = parseSection(s, "TERRAIN");
 
-    return {
-        meta: m ?? {},
-        leaders: leaders ?? [],
-        battleline: battleline ?? [],
-        other: other ?? [],
-        terrain: terrain ?? []
-    };
+  return {
+    meta: m ?? {},
+    leaders: leaders ?? [],
+    battleline: battleline ?? [],
+    other: other ?? [],
+    terrain: terrain ?? []
+  };
 }
