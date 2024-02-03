@@ -1,509 +1,574 @@
 [
-  {
-    "faction": "Cities of Sigmar",
-    "type": "leader",
-    "name": "Alchemite Warforger",
-    "movement": "5\"",
-    "save": "5+",
-    "bravery": "6",
-    "wounds": "5",
-    "meleeWeapons": [
-      {
-        "name": "Tongstaff",
-        "range": "2\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "D3"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Wizard",
-        "description": "1 cast 1 unbind"
-      },
-      {
-        "name": "Runic Crucible",
-        "description": "Start of hero, soke +1 to cast, no cast +1 S wholly within 12\"."
-      },
-      {
-        "name": "Blazing Weapons",
-        "description": "CV7 range 12\" units wholly within +1MW in addition."
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "other",
-    "name": "Doralia ven Denst",
-    "movement": "5\"",
-    "save": "4+",
-    "bravery": "8",
-    "wounds": "5",
-    "missileWeapons": [
-      {
-        "name": "Anti-thaumic Crossbow",
-        "range": "24\"",
-        "attacks": "2",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-2",
-        "damage": "2"
-      }
-    ],
-    "meleeWeapons": [
-      {
-        "name": "Consecrated Blade",
-        "range": "1\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "2"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Grim Resolve",
-        "description": "5+ Ward. "
-      },
-      {
-        "name": "Weapons of Banishment",
-        "description": "Double damage of an attack against WIZARD/DAEMON. Attack endless on hit 2D6 agains CV. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "leader",
-    "name": "Galen ven Denst",
-    "movement": "5\"",
-    "save": "4+",
-    "bravery": "8",
-    "wounds": "5",
-    "missileWeapons": [
-      {
-        "name": "Spell-banishing pistol",
-        "range": "9\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "1"
-      }
-    ],
-    "meleeWeapons": [
-      {
-        "name": "Runic Broadsword",
-        "range": "1\"",
-        "attacks": "4",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "2"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Grim Resolve",
-        "description": "5+ Ward. "
-      },
-      {
-        "name": "Weapons of Banishment",
-        "description": "Double damage of an attack against WIZARD/DAEMON. Attack endless on hit 2D6 agains CV. "
-      },
-      {
-        "name": "Guardian and Mentor",
-        "description": "Within 3\" of Doralia and enemy within 3\" of her, strike-first. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "leader",
-    "name": "Freeguild Cavalier-Marshal",
-    "movement": "10\"",
-    "save": "3+",
-    "bravery": "7",
-    "wounds": "7",
-    "missileWeapons": [
-      {
-        "name": "Dragoon Pistol",
-        "range": "18\"",
-        "attacks": "2",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "1"
-      }
-    ],
-    "meleeWeapons": [
-      {
-        "name": "Master-forged Longsword",
-        "range": "1\"",
-        "attacks": "4",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "2"
-      },
-      {
-        "name": "Steel-shod Hooves",
-        "range": "1\"",
-        "attacks": "3",
-        "toHit": "4+",
-        "toWound": "4+",
-        "rend": "-",
-        "damage": "1"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "For Sigmar, Charge!",
-        "description": "Fines Hour +3 charge rolls for CAVALIERS wholly within 12\""
-      },
-      {
-        "name": "Run Down the Foe",
-        "description": "This unit and 1 CAVALIERS wholly within 12\" strike first when charging. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "leader",
-    "name": "Freeguild Marshal and Relic Envoy",
-    "movement": "5\"",
-    "save": "3+",
-    "bravery": "7",
-    "wounds": "5",
-    "missileWeapons": [
-      {
-        "name": "Duelling Pistols",
-        "range": "9\"",
-        "attacks": "4",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "1"
-      }
-    ],
-    "meleeWeapons": [
-      {
-        "name": "Master-forged Longsword",
-        "range": "1\"",
-        "attacks": "4",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "2"
-      },
-      {
-        "name": "Heirloom Warhammer",
-        "range": "1\"",
-        "attacks": "3",
-        "toHit": "4+",
-        "toWound": "2+",
-        "rend": "-2",
-        "damage": "3"
-      },
-      {
-        "name": "Silvered Shortsword",
-        "range": "1\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-2",
-        "damage": "1"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Attendant Relic Envoy",
-        "description": "1CP used on this unit or 1 unit wholly within 12\" free CP. "
-      },
-      {
-        "name": "Rousing Speech",
-        "description": "Once per battle HEROIC ACTION 3 units wholly within 18\" roll 2D6 under or equal to bravery counts as 2 models for contesting. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "leader",
-    "name": "Fusil-Major on Ogor Warhulk",
-    "movement": "5\"",
-    "save": "3+",
-    "bravery": "7",
-    "wounds": "8",
-    "missileWeapons": [
-      {
-        "name": "Long Fusil",
-        "range": "24\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "D3"
-      }
-    ],
-    "meleeWeapons": [
-      {
-        "name": "Warhulk Mace",
-        "range": "2\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-2",
-        "damage": "D3"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Crack Shot",
-        "description": "If to-hit 6+ for each roll D6 over wounds pick model to be slayed. "
-      },
-      {
-        "name": "Range Finder",
-        "description": "1 CASTELITE wholly within 12\" +D6\" range. "
-      },
-      {
-        "name": "Fortified Position",
-        "description": "Start of battle and end of movement if not moving can be fortified. No rend for missile attacks. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "leader",
-    "name": "Haskel Hexbane",
-    "movement": "5\"",
-    "save": "5+",
-    "bravery": "7",
-    "wounds": "5",
-    "missileWeapons": [
-      {
-        "name": "Blackpowder Pistols",
-        "range": "9\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "1"
-      }
-    ],
-    "meleeWeapons": [
-      {
-        "name": "Truefire Brand",
-        "range": "1\"",
-        "attacks": "3",
-        "toHit": "+3",
-        "toWound": "+3",
-        "rend": "-1",
-        "damage": "2"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Hunt with Conviction",
-        "description": "After deployment choose 1 WIZARD and get +1D to that unit. "
-      },
-      {
-        "name": "Flamewood Stakes",
-        "description": "After combat one unit within 3\" 3+ D3MW 2+ if DEATH or DAEMON. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "leader",
-    "name": "Pontifex Zenestra, Matriarch of the Great Wheel",
-    "movement": "5\"",
-    "save": "+5",
-    "bravery": "9",
-    "wounds": "9",
-    "meleeWeapons": [
-      {
-        "name": "Sceptre of the Wheel",
-        "range": "1\"",
-        "attacks": "1",
-        "toHit": "+3",
-        "toWound": "+3",
-        "rend": "-",
-        "damage": "1"
-      },
-      {
-        "name": "Sceptre of the Wheel",
-        "range": "1\"",
-        "attacks": "4",
-        "toHit": "+3",
-        "toWound": "+3",
-        "rend": "-",
-        "damage": "1"
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Voice of the God-King",
-        "description": "Dispel 1 with +1. "
-      },
-      {
-        "name": "Blessed Palanquin",
-        "description": "4+ ward"
-      },
-      {
-        "name": "Vessel of Sigmar",
-        "description": "Prayer 3. 1 effect in own territory 2 if not. Hallowed Ground 5+ ward wholly within 18\" The great wheel turns +2M for wholle army. Cast Out Evil. 1 dice per enemy PRIEST or WIZARD 2+ D3MW. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "battleline",
-    "name": "Freeguild Steelhelms",
-    "movement": "5\"",
-    "save": "4+",
-    "bravery": "5",
-    "wounds": "1",
-    "meleeWeapons": [
-      {
-        "name": "Freeguild Weapon",
-        "range": "1\"",
-        "attacks": "2",
-        "toHit": "4+",
-        "toWound": "4+",
-        "rend": "-",
-        "damage": "1"
-      }
-    ],
-    "champion": "+1A. ",
-    "standard": "+1B. ",
-    "musician": "Battlepriest. ",
-    "abilities": [
-      {
-        "name": "Consecrate the Land",
-        "description": "End of movement. If contesting and no enemy 3+ all CoS get 6+ ward while contesting. On enemy control lose consecration. "
-      },
-      {
-        "name": "Hold the Line",
-        "description": "On all out attack/defense one other unit with hold the line wholly within 12\" get the same for free. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "other",
-    "name": "Freeguild Cavaliers",
-    "movement": "10\"",
-    "save": "3+",
-    "bravery": "7",
-    "wounds": "2",
-    "meleeWeapons": [
-      {
-        "name": "Cavalier Weapon",
-        "range": "1\"",
-        "attacks": "3",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "1"
-      },
-      {
-        "name": "Arch-Knight’s Blade",
-        "range": "1\"",
-        "attacks": "4",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-2",
-        "damage": "2"
-      },
-      {
-        "name": "Steel-shod Hooves",
-        "range": "1\"",
-        "attacks": "2",
-        "toHit": "4+",
-        "toWound": "4+",
-        "rend": "-",
-        "damage": "1"
-      }
-    ],
-    "champion": "Armed with Arch-Knight´s blade. ",
-    "standard": "+1B. ",
-    "abilities": [
-      {
-        "name": "Devastating Charge",
-        "description": "+1D and +1 Rend on charge. "
-      }
-    ]
-  },
-  {
-    "faction": "Cities of Sigmar",
-    "type": "other",
-    "name": "Freeguild Command Corps",
-    "movement": "5\"",
-    "save": "4+",
-    "bravery": "7",
-    "wounds": "3",
-    "meleeWeapons": [
-      {
-        "name": "Sigmarite Great Weapon",
-        "range": "2\"",
-        "attacks": "4",
-        "toHit": "3+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "D3"
-      },
-      {
-        "name": "Enchanted Rapier",
-        "range": "1\"",
-        "attacks": "1",
-        "toHit": "2+",
-        "toWound": "2+",
-        "rend": "-3",
-        "damage": "D6"
-      },
-      {
-        "name": "Assortment of Weapons",
-        "range": "1\"",
-        "attacks": "2",
-        "toHit": "3+",
-        "toWound": "4+",
-        "rend": "-",
-        "damage": "1"
-      },
-      {
-        "name": "Gargoylian Bite",
-        "range": "1\"",
-        "attacks": "3",
-        "toHit": "4+",
-        "toWound": "3+",
-        "rend": "-1",
-        "damage": "D3"
-      }
-    ],
-    "standard": "Great Herald has the TOTEM keyword. ",
-    "abilities": [
-      {
-        "name": "The Marshal’s Retinue",
-        "description": "At the start of the first battleround select marchal and while this unit is within 3\" 4+ ward. "
-      },
-      {
-        "name": "Sawbones",
-        "description": "3 units wholly within 12\" Heal D3 W or bring back models with D3 wounds. "
-      },
-      {
-        "name": "Dispatch Spies",
-        "description": "Once per turn when enemy issues command. 4+ cancels command. "
-      },
-      {
-        "name": "Sound the Advance",
-        "description": "+1 run and charge for units wholly within 12\". +D3\" for retreat for units with Great Herald. "
-      },
-      {
-        "name": "Tune of the Corpus Somni",
-        "description": "If models flee wholly within 12\" this unit on 4+ the model does not flee. "
-      }
-    ]
-  }
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Alchemite Warforger",
+		"movement": "5\"",
+		"save": "5+",
+		"bravery": "6",
+		"wounds": "5",
+		"meleeWeapons": [
+			{
+				"name": "Tongstaff",
+				"range": "2\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "D3"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Wizard",
+				"description": "1 cast 1 unbind"
+			},
+			{
+				"name": "Runic Crucible",
+				"description": "Start of hero, soke +1 to cast, no cast +1 S wholly within 12\"."
+			},
+			{
+				"name": "Blazing Weapons",
+				"description": "CV7 range 12\" units wholly within +1MW in addition."
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "other",
+		"name": "Doralia ven Denst",
+		"movement": "5\"",
+		"save": "4+",
+		"bravery": "8",
+		"wounds": "5",
+		"missileWeapons": [
+			{
+				"name": "Anti-thaumic Crossbow",
+				"range": "24\"",
+				"attacks": "2",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-2",
+				"damage": "2"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Consecrated Blade",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "2"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Grim Resolve",
+				"description": "5+ Ward. "
+			},
+			{
+				"name": "Weapons of Banishment",
+				"description": "Double damage of an attack against WIZARD/DAEMON. Attack endless on hit 2D6 agains CV. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Galen ven Denst",
+		"movement": "5\"",
+		"save": "4+",
+		"bravery": "8",
+		"wounds": "5",
+		"missileWeapons": [
+			{
+				"name": "Spell-banishing pistol",
+				"range": "9\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "1"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Runic Broadsword",
+				"range": "1\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "2"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Grim Resolve",
+				"description": "5+ Ward. "
+			},
+			{
+				"name": "Weapons of Banishment",
+				"description": "Double damage of an attack against WIZARD/DAEMON. Attack endless on hit 2D6 agains CV. "
+			},
+			{
+				"name": "Guardian and Mentor",
+				"description": "Within 3\" of Doralia and enemy within 3\" of her, strike-first. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Freeguild Cavalier-Marshal",
+		"movement": "10\"",
+		"save": "3+",
+		"bravery": "7",
+		"wounds": "7",
+		"missileWeapons": [
+			{
+				"name": "Dragoon Pistol",
+				"range": "18\"",
+				"attacks": "2",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "1"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Master-forged Longsword",
+				"range": "1\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "2"
+			},
+			{
+				"name": "Steel-shod Hooves",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "4+",
+				"toWound": "4+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"abilities": [
+			{
+				"name": "For Sigmar, Charge!",
+				"description": "Fines Hour +3 charge rolls for CAVALIERS wholly within 12\""
+			},
+			{
+				"name": "Run Down the Foe",
+				"description": "This unit and 1 CAVALIERS wholly within 12\" strike first when charging. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Freeguild Marshal and Relic Envoy",
+		"movement": "5\"",
+		"save": "3+",
+		"bravery": "7",
+		"wounds": "5",
+		"missileWeapons": [
+			{
+				"name": "Duelling Pistols",
+				"range": "9\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "1"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Master-forged Longsword",
+				"range": "1\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "2"
+			},
+			{
+				"name": "Heirloom Warhammer",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "4+",
+				"toWound": "2+",
+				"rend": "-2",
+				"damage": "3"
+			},
+			{
+				"name": "Silvered Shortsword",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-2",
+				"damage": "1"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Attendant Relic Envoy",
+				"description": "1CP used on this unit or 1 unit wholly within 12\" free CP. "
+			},
+			{
+				"name": "Rousing Speech",
+				"description": "Once per battle HEROIC ACTION 3 units wholly within 18\" roll 2D6 under or equal to bravery counts as 2 models for contesting. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Fusil-Major on Ogor Warhulk",
+		"movement": "5\"",
+		"save": "3+",
+		"bravery": "7",
+		"wounds": "8",
+		"missileWeapons": [
+			{
+				"name": "Long Fusil",
+				"range": "24\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "D3"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Warhulk Mace",
+				"range": "2\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-2",
+				"damage": "D3"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Crack Shot",
+				"description": "If to-hit 6+ for each roll D6 over wounds pick model to be slayed. "
+			},
+			{
+				"name": "Range Finder",
+				"description": "1 CASTELITE wholly within 12\" +D6\" range. "
+			},
+			{
+				"name": "Fortified Position",
+				"description": "Start of battle and end of movement if not moving can be fortified. No rend for missile attacks. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Haskel Hexbane",
+		"movement": "5\"",
+		"save": "5+",
+		"bravery": "7",
+		"wounds": "5",
+		"missileWeapons": [
+			{
+				"name": "Blackpowder Pistols",
+				"range": "9\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "1"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Truefire Brand",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "+3",
+				"toWound": "+3",
+				"rend": "-1",
+				"damage": "2"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Hunt with Conviction",
+				"description": "After deployment choose 1 WIZARD and get +1D to that unit. "
+			},
+			{
+				"name": "Flamewood Stakes",
+				"description": "After combat one unit within 3\" 3+ D3MW 2+ if DEATH or DAEMON. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Pontifex Zenestra, Matriarch of the Great Wheel",
+		"movement": "5\"",
+		"save": "+5",
+		"bravery": "9",
+		"wounds": "9",
+		"meleeWeapons": [
+			{
+				"name": "Sceptre of the Wheel",
+				"range": "1\"",
+				"attacks": "1",
+				"toHit": "+3",
+				"toWound": "+3",
+				"rend": "-",
+				"damage": "1"
+			},
+			{
+				"name": "Sceptre of the Wheel",
+				"range": "1\"",
+				"attacks": "4",
+				"toHit": "+3",
+				"toWound": "+3",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Voice of the God-King",
+				"description": "Dispel 1 with +1. "
+			},
+			{
+				"name": "Blessed Palanquin",
+				"description": "4+ ward"
+			},
+			{
+				"name": "Vessel of Sigmar",
+				"description": "Prayer 3. 1 effect in own territory 2 if not. Hallowed Ground 5+ ward wholly within 18\" The great wheel turns +2M for wholle army. Cast Out Evil. 1 dice per enemy PRIEST or WIZARD 2+ D3MW. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "battleline",
+		"name": "Freeguild Steelhelms",
+		"movement": "5\"",
+		"save": "4+",
+		"bravery": "5",
+		"wounds": "1",
+		"meleeWeapons": [
+			{
+				"name": "Freeguild Weapon",
+				"range": "1\"",
+				"attacks": "2",
+				"toHit": "4+",
+				"toWound": "4+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"champion": "+1A. ",
+		"standard": "+1B. ",
+		"musician": "Battlepriest. ",
+		"abilities": [
+			{
+				"name": "Consecrate the Land",
+				"description": "End of movement. If contesting and no enemy 3+ all CoS get 6+ ward while contesting. On enemy control lose consecration. "
+			},
+			{
+				"name": "Hold the Line",
+				"description": "On all out attack/defense one other unit with hold the line wholly within 12\" get the same for free. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "other",
+		"name": "Freeguild Cavaliers",
+		"movement": "10\"",
+		"save": "3+",
+		"bravery": "7",
+		"wounds": "2",
+		"meleeWeapons": [
+			{
+				"name": "Cavalier Weapon",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "1"
+			},
+			{
+				"name": "Arch-Knight’s Blade",
+				"range": "1\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-2",
+				"damage": "2"
+			},
+			{
+				"name": "Steel-shod Hooves",
+				"range": "1\"",
+				"attacks": "2",
+				"toHit": "4+",
+				"toWound": "4+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"champion": "Armed with Arch-Knight´s blade. ",
+		"standard": "+1B. ",
+		"abilities": [
+			{
+				"name": "Devastating Charge",
+				"description": "+1D and +1 Rend on charge. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "other",
+		"name": "Freeguild Command Corps",
+		"movement": "5\"",
+		"save": "4+",
+		"bravery": "7",
+		"wounds": "3",
+		"meleeWeapons": [
+			{
+				"name": "Sigmarite Great Weapon",
+				"range": "2\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "D3"
+			},
+			{
+				"name": "Enchanted Rapier",
+				"range": "1\"",
+				"attacks": "1",
+				"toHit": "2+",
+				"toWound": "2+",
+				"rend": "-3",
+				"damage": "D6"
+			},
+			{
+				"name": "Assortment of Weapons",
+				"range": "1\"",
+				"attacks": "2",
+				"toHit": "3+",
+				"toWound": "4+",
+				"rend": "-",
+				"damage": "1"
+			},
+			{
+				"name": "Gargoylian Bite",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "4+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "D3"
+			}
+		],
+		"standard": "Great Herald has the TOTEM keyword. ",
+		"abilities": [
+			{
+				"name": "The Marshal’s Retinue",
+				"description": "At the start of the first battleround select marchal and while this unit is within 3\" 4+ ward. "
+			},
+			{
+				"name": "Sawbones",
+				"description": "3 units wholly within 12\" Heal D3 W or bring back models with D3 wounds. "
+			},
+			{
+				"name": "Dispatch Spies",
+				"description": "Once per turn when enemy issues command. 4+ cancels command. "
+			},
+			{
+				"name": "Sound the Advance",
+				"description": "+1 run and charge for units wholly within 12\". +D3\" for retreat for units with Great Herald. "
+			},
+			{
+				"name": "Tune of the Corpus Somni",
+				"description": "If models flee wholly within 12\" this unit on 4+ the model does not flee. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "other",
+		"name": "Freeguild Fusiliers",
+		"movement": "5\"",
+		"save": "4+",
+		"bravery": "5",
+		"wounds": "1",
+		"meleeWeapons": [
+			{
+				"name": "Bayonet",
+				"range": "1\"",
+				"attacks": "1",
+				"toHit": "4+",
+				"toWound": "4+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"missileWeapons": [
+			{
+				"name": "Fusil-Canon: Fortified",
+				"range": "24\"",
+				"attacks": "2",
+				"toHit": "4+",
+				"toWound": "4+",
+				"rend": "-1",
+				"damage": "1"
+			},
+			{
+				"name": "Fusil-Canon",
+				"range": "12\"",
+				"attacks": "1",
+				"toHit": "4+",
+				"toWound": "4+",
+				"rend": "-1",
+				"damage": "1"
+			},
+			{
+				"name": "Brace of Pistols",
+				"range": "9\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"champion": "+2A / Brace of Pistols. ",
+		"standard": "+1B. ",
+		"abilities": [
+			{
+				"name": "Fusuliers, Fire!",
+				"description": "Use fortified fusil canon stats while fortified. "
+			},
+			{
+				"name": "Fortified Position",
+				"description": "Starts fortified, End of movement if not moved can change to fortified. "
+			},
+			{
+				"name": "Resupply Run",
+				"description": "Round 3+ once per battle. Reroll to-hit until end of turn. "
+			}
+		]
+	}
 ]
