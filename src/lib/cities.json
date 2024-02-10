@@ -563,7 +563,7 @@
 			},
 			{
 				"name": "Fortified Position",
-				"description": "Starts fortified, End of movement if not moved can change to fortified. "
+				"description": "Starts fortified, end of movement if not moved can change to fortified. "
 			},
 			{
 				"name": "Resupply Run",
@@ -640,6 +640,65 @@
 			{
 				"name": "Flamewood Stakes",
 				"description": "After combat one unit within 3\" 3+ D3MW 2+ if DEATH or DAEMON. "
+			}
+		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "artillery",
+		"name": "Ironweld Great Cannon",
+		"movement": "3\"",
+		"save": "4+",
+		"bravery": "5",
+		"wounds": "8",
+		"missileWeapons": [
+			{
+				"name": "Cannonball",
+				"range": "24\"",
+				"attacks": "2",
+				"toHit": "4+",
+				"toWound": "2+",
+				"rend": "-2",
+				"damage": "D3+2"
+			},
+			{
+				"name": "Armour-piercing",
+				"range": "24\"",
+				"attacks": "2",
+				"toHit": "4+",
+				"toWound": "2+",
+				"rend": "-4",
+				"damage": "D6"
+			},
+			{
+				"name": "Armour-piercing",
+				"range": "12\"",
+				"attacks": "5",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "2"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Great Axe",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "4+",
+				"toWound": "5+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Shot and Shell",
+				"description": "Select shot. Armour and ball can only be choosen when fortified. "
+			},
+			{
+				"name": "Fortified Position",
+				"description": "Starts fortified, end of movement if not moved can change to fortified. "
 			}
 		]
 	}

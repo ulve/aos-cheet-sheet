@@ -105,12 +105,14 @@ interface Meta {
 	subfaction: string;
 	grandStrategy: string;
 }
+
 export interface Parsed {
 	meta: Meta;
 	leaders: U[];
 	battleline: U[];
 	terrain: U[];
 	other: U[];
+	artillery: U[];
 }
 
 function parseMeta(s: string): Meta {
@@ -139,7 +141,8 @@ function isHeader(s: string): boolean {
 		s.startsWith('BATTLELINE') ||
 		s.startsWith('LEADER') ||
 		s.startsWith('TERRAIN') ||
-		s.startsWith('OTHER')
+		s.startsWith('OTHER') ||
+		s.startsWith('ARTILLERY')
 	);
 }
 
@@ -186,12 +189,14 @@ export function parse(s: string): Parsed {
 	const battleline = parseSection(s, 'BATTLELINE');
 	const other = parseSection(s, 'OTHER');
 	const terrain = parseSection(s, 'TERRAIN');
+	const artillery = parseSection(s, 'ARTILLERY');
 
 	return {
 		meta: m ?? {},
 		leaders: leaders ?? [],
 		battleline: battleline ?? [],
 		other: other ?? [],
-		terrain: terrain ?? []
+		terrain: terrain ?? [],
+		artillery: artillery ?? []
 	};
 }

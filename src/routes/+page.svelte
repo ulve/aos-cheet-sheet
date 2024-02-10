@@ -48,6 +48,12 @@
 				u.push(h);
 			}
 		});
+		parsedList.artillery.forEach((o) => {
+			const h = units.find((h) => h.name === o.name && h.faction === parsedList.meta.faction);
+			if (h) {
+				u.push(h);
+			}
+		});
 		// sort unit by name
 		u = u.sort((a, b) => {
 			if (a.name < b.name) {
