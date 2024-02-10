@@ -21,15 +21,15 @@
 		"abilities": [
 			{
 				"name": "Wizard",
-				"description": "1 cast 1 unbind"
+				"description": "1 cast 1 unbind. "
 			},
 			{
 				"name": "Runic Crucible",
-				"description": "Start of hero, soke +1 to cast, no cast +1 S wholly within 12\"."
+				"description": "Start of hero, soke +1 to cast, no cast +1 S wholly within 12\". "
 			},
 			{
 				"name": "Blazing Weapons",
-				"description": "CV7 range 12\" units wholly within +1MW in addition."
+				"description": "CV7 range 12\" units wholly within +1MW in addition. "
 			}
 		]
 	},
@@ -77,7 +77,7 @@
 	{
 		"faction": "Cities of Sigmar",
 		"type": "leader",
-		"name": "Galen ven Denst",
+		"name": "Galen Ven Denst",
 		"movement": "5\"",
 		"save": "4+",
 		"bravery": "8",
@@ -161,7 +161,7 @@
 		"abilities": [
 			{
 				"name": "For Sigmar, Charge!",
-				"description": "Fines Hour +3 charge rolls for CAVALIERS wholly within 12\""
+				"description": "Fines Hour +3 charge rolls for CAVALIERS wholly within 12\". "
 			},
 			{
 				"name": "Run Down the Foe",
@@ -317,7 +317,7 @@
 	{
 		"faction": "Cities of Sigmar",
 		"type": "leader",
-		"name": "Pontifex Zenestra, Matriarch of the Great Wheel",
+		"name": "Pontifex Zenestra",
 		"movement": "5\"",
 		"save": "+5",
 		"bravery": "9",
@@ -349,7 +349,7 @@
 			},
 			{
 				"name": "Blessed Palanquin",
-				"description": "4+ ward"
+				"description": "4+ ward. "
 			},
 			{
 				"name": "Vessel of Sigmar",
@@ -570,11 +570,77 @@
 				"description": "Round 3+ once per battle. Reroll to-hit until end of turn. "
 			}
 		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "other",
+		"name": "Hexbane’s Hunters",
+		"movement": "5\"",
+		"save": "5+",
+		"bravery": "7",
+		"wounds": "2",
+		"missileWeapons": [
+			{
+				"name": "Crossbow Launcher",
+				"range": "18\"",
+				"attacks": "1",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "D6"
+			},
+			{
+				"name": "Crossbow Launcher",
+				"range": "9\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "1"
+			}
+		],
+		"meleeWeapons": [
+			{
+				"name": "Great Axe",
+				"range": "2\"",
+				"attacks": "3",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-2",
+				"damage": "D3"
+			},
+			{
+				"name": "Witch Hunter Weapons",
+				"range": "1\"",
+				"attacks": "2",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "1"
+			},
+			{
+				"name": "Ferocious Bite",
+				"range": "1\"",
+				"attacks": "3",
+				"toHit": "4+",
+				"toWound": "3+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Grim Resolve",
+				"description": "5+ Ward. "
+			},
+			{
+				"name": "Agents of the Order",
+				"description": "+1D to target of the witch hunt. "
+			},
+			{
+				"name": "Flamewood Stakes",
+				"description": "After combat one unit within 3\" 3+ D3MW 2+ if DEATH or DAEMON. "
+			}
+		]
 	}
-
-	// TODO: https://wahapedia.ru/aos3/factions/cities-of-sigmar/Hexbane-s-Hunters
-	// TODO: https://wahapedia.ru/aos3/factions/cities-of-sigmar/Ironweld-Great-Cannon
-	// TODO: add artiellry to parser etc
-	// TODO: https://wahapedia.ru/aos3/factions/cities-of-sigmar/Tahlia-Vedra-Lioness-of-the-Parch
-	// TODO: https://wahapedia.ru/aos3/factions/cities-of-sigmar/Freeguild-Marshal-on-Griffon
 ]

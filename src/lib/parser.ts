@@ -1,3 +1,37 @@
+const cos = `- Army Faction: Cities of Sigmar
+	 - Subfaction: Misthåvn
+LEADERS
+Alchemite Warforger (110)
+Freeguild Cavalier-Marshal (120)
+	 - General
+Freeguild Marshal and Relic Envoy (90)
+	 - Heirloom Warhammer
+Fusil-Major on Ogor Warhulk (150)
+Galen Ven Denst (160)
+Haskel Hexbane (180)
+Pontifex Zenestra (180)
+Tahlia Vedra (340)
+BATTLELINE
+Freeguild Cavaliers (180)
+	 - Arch-Knight
+	 - Cavalier Herald
+	 - Arch-Knight’s Blade
+Freeguild Steelhelms (100)
+	 - Sergeant-at-Arms
+	 - Battle Priest
+	 - Steelhelm Herald
+ARTILLERY
+Ironweld Great Cannon (150)
+OTHER
+Doralia ven Denst (160)
+Freeguild Command Corps (170)
+Freeguild Fusiliers (170)
+	 - Fusilier Herald
+	 - Fusil-Sergeant
+Hexbane’s Hunters (180)
+TOTAL POINTS: 2100/2000
+Created with Warhammer Age of Sigmar: The App`;
+
 const text2 = `- Army Faction: Maggotkin of Nurgle
 - Subfaction: Befouling Host
 - Grand Strategy: Corrupt Arcane Nexus
@@ -80,7 +114,7 @@ export interface Parsed {
 }
 
 function parseMeta(s: string): Meta {
-	let m: Meta = { faction: 'unknown', subfaction: 'unknown', grandStrategy: 'unknown' };
+	const m: Meta = { faction: 'unknown', subfaction: 'unknown', grandStrategy: 'unknown' };
 	s.split('\n').forEach((line) => {
 		// meta
 		if (line.trim().startsWith('- Army Faction:')) {
@@ -112,7 +146,7 @@ function isHeader(s: string): boolean {
 function parseSection(s: string, section: string): U[] {
 	let inSection = false;
 	let current: U | null;
-	let retVal: U[] = [];
+	const retVal: U[] = [];
 
 	s.split('\n').forEach((line) => {
 		if (inSection) {
