@@ -12,7 +12,8 @@
 		leaders: [],
 		battleline: [],
 		other: [],
-		terrain: []
+		terrain: [],
+		artillery: []
 	};
 
 	let u: Unit[] = [];
@@ -20,6 +21,7 @@
 		u = [];
 		parsedList = parse(text);
 		console.log(parsedList.meta);
+
 		parsedList.leaders.forEach((leader) => {
 			const h = units.find((h) => h.name === leader.name && h.faction === parsedList.meta.faction);
 			if (h) {
@@ -36,24 +38,28 @@
 				u.push(h);
 			}
 		});
+
 		parsedList.battleline.forEach((bl) => {
 			const h = units.find((h) => h.name === bl.name && h.faction === parsedList.meta.faction);
 			if (h) {
 				u.push(h);
 			}
 		});
+
 		parsedList.other.forEach((o) => {
 			const h = units.find((h) => h.name === o.name && h.faction === parsedList.meta.faction);
 			if (h) {
 				u.push(h);
 			}
 		});
+
 		parsedList.artillery.forEach((o) => {
 			const h = units.find((h) => h.name === o.name && h.faction === parsedList.meta.faction);
 			if (h) {
 				u.push(h);
 			}
 		});
+		//
 		// sort unit by name
 		u = u.sort((a, b) => {
 			if (a.name < b.name) {
@@ -305,6 +311,7 @@
 		flex-direction: column;
 		align-self: stretch;
 	}
+
 	.weapon {
 		display: grid;
 		align-self: stretch;
@@ -359,8 +366,20 @@
 	}
 
 	@media print {
-		.no-print,
-		.no-print * {
+		.container {
+			font-size: 8px;
+		}
+
+		.name {
+			font-size: 12px;
+		}
+
+		.unit {
+			margin: 0.5rem;
+			max-width: 45%;
+		}
+
+		.no-print {
 			display: none !important;
 		}
 	}

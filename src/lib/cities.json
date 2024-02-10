@@ -701,5 +701,78 @@
 				"description": "Starts fortified, end of movement if not moved can change to fortified. "
 			}
 		]
+	},
+	{
+		"faction": "Cities of Sigmar",
+		"type": "leader",
+		"name": "Tahlia Vedra",
+		"movement": "*",
+		"save": "4+",
+		"bravery": "8",
+		"wounds": "15",
+		"meleeWeapons": [
+			{
+				"name": "Weapons of Office",
+				"range": "1\"",
+				"attacks": "6",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "2"
+			},
+			{
+				"name": "Leonine Jaws",
+				"range": "2\"",
+				"attacks": "3",
+				"toHit": "*",
+				"toWound": "3+",
+				"rend": "-2",
+				"damage": "3"
+			},
+			{
+				"name": "Scorpid Stinger",
+				"range": "3\"",
+				"attacks": "2",
+				"toHit": "4+",
+				"toWound": "2+",
+				"rend": "-3",
+				"damage": "*"
+			}
+		],
+		"damageTable": {
+			"header": ["Wounds", "Move", "Jaws", "Stinger"],
+			"rows": [
+				["0-6", "14\"", "2+", "D3+3"],
+				["7-9", "12\"", "3+", "D3+2"],
+				["10-12", "10\"", "4+", "D3+1"],
+				["13+", "8\"", "5+", "D3"]
+			]
+		},
+		"abilities": [
+			{
+				"name": "Warmaster",
+				"description": "Works as general. "
+			},
+			{
+				"name": "Fly",
+				"description": "This unit can fly. "
+			},
+			{
+				"name": "Field Marshal of Hammerhal",
+				"description": "6+ Ward. "
+			},
+			{
+				"name": "Lead From the Front",
+				"description": "While within 3\" of enemy units can issue rally to units within 3\" of enemy. They rally on 4+. "
+			},
+			{
+				"name": "Unparalleled Tactician",
+				"description": "Can be given 2 different orders. "
+			},
+			{
+				"name": "Paralysing Venom",
+				"description": "Rampage. Pick enemy monster that charged and is within 3\". On 3+ strike-last. "
+			}
+		]
 	}
 ]
