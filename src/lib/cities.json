@@ -590,7 +590,7 @@
 				"damage": "D6"
 			},
 			{
-				"name": "Crossbow Launcher",
+				"name": "Volley Pistol",
 				"range": "9\"",
 				"attacks": "3",
 				"toHit": "3+",
