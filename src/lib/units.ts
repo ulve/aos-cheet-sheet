@@ -2,6 +2,7 @@ import u from './gitz.json';
 import u2 from './maggotkin.json';
 import u3 from './cities.json';
 import o from './gitzOptions.json';
+import o3 from './citiesOptions.json';
 
 export interface Unit {
 	faction: string;
@@ -24,6 +25,7 @@ interface DamageTable {
 	header: string[];
 	rows: string[][];
 }
+
 interface Weapon {
 	name: string;
 	range: string;
@@ -40,6 +42,5 @@ interface Ability {
 	type?: string;
 }
 
-export const options: Ability[] = o;
+export const options: Ability[] = [...o, ...o3];
 export const units: Unit[] = [...u, ...u2, ...u3];
-

@@ -1,0 +1,92 @@
+[
+	{
+		"type": "artefact",
+		"name": "Brazier of Holy Flame",
+		"description": "When a uniet flees within 12\" on 4+ it does not flee. "
+	},
+	{
+		"type": "artefact",
+		"name": "Mastro Vivetti’s Magnificent Macroscope",
+		"description": "Add 3\" range to missile weapons when wholly within 12\". "
+	},
+	{
+		"type": "artefact",
+		"name": "Shemtek’s Grimoire",
+		"description": "Once per battle in hero phase. Roll D3 and enemy wisards subtracts that from casting rolls. "
+	},
+	{
+		"type": "artefact",
+		"name": "Sigmarite Warhammer",
+		"description": "+1 Rend +1D on one weapon. "
+	},
+	{
+		"type": "artefact",
+		"name": "Flask of Lethisian Darkwater",
+		"description": "Once per battle end of any phase. Heal D6 W. "
+	},
+	{
+		"type": "artefact",
+		"name": "Glimmering",
+		"description": "Once per battle. Re-roll to-hit, to-wound or save. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Divine Champion",
+		"description": "Becomes priest and know Hammer of Sigmar. Answer 4 Range 12\" +1 to-wound for units wholly within. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Grizzled Veteran",
+		"description": "Only gets wounded on 4+ unmodified. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Master of Ballistics",
+		"description": "When issuing all-out attack missile weapons +1 to-wound in addition. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Fiery Temper",
+		"description": "Re-roll charge and friendly wholly within 18\" can also reroll. "
+	},
+	{
+		"type": "spell",
+		"name": "Fireball",
+		"description": "CV6 range 18\" unit visible within roll 1 die for each model 6+MW. "
+	},
+	{
+		"type": "spell",
+		"name": "Mystifying Miasma",
+		"description": "CV5 range 24\" unit visible within cannot run and -2 charge. "
+	},
+	{
+		"type": "spell",
+		"name": "Pall of Doom",
+		"description": "CV7 range 18\" unit visible within cannot issue or recive commands. "
+	},
+	{
+		"type": "spell",
+		"name": "Pha’s Protection",
+		"description": "CV7 range 18\" unit visible wholly within ignore modifies to save rolls. "
+	},
+	{
+		"type": "spell",
+		"name": "Rain of Jade",
+		"description": "CV7 range 12\" visible wholly within roll 1 die for each lost wound 5+ heals that wound. "
+	},
+	{
+		"type": "spell",
+		"name": "Transmutation of Lead",
+		"description": "CV7 range 12\" unit visible within roll 1 die for each model on save+ MW. "
+	},
+	{
+		"type": "spell",
+		"name": "Twin-tailed Comet",
+		"description": "CV7 range 18\" unit visible within draw line from caster to model in enemy unit. Every friendly who passes the line 10B then D3MW. "
+	},
+	{
+		"type": "spell",
+		"name": "Wildform",
+		"description": "CV7 range 12\" visible wholly within charge within 18\" with 3D6. "
+	}
+]
