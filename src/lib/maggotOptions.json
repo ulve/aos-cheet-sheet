@@ -1,0 +1,47 @@
+[
+	{
+		"type": "commandTrait",
+		"name": "Grandfather’s Blessing",
+		"description": "Once per battle you may move the cycle of corruption forward. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Infernal Conduit",
+		"description": "Hero phase 2-5 1 CP 6 D3 CP. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Living Plague",
+		"description": "Hero Phase 2+ 1 disease for units within 7\". "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Avalanche of Rotten Flesh",
+		"description": "After charge enemy within 1\" 1 die per charge roll 6+ MW. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Bloated with Corruption",
+		"description": "On disustingly resilient 6 give disease to unit within 3\". "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Overpowering Stench",
+		"description": "Units within 7\" cannot issue or recieve commands. "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Gift of Febrile Frenzy",
+		"description": "Once per battle in combat phase +1A to friendly within 7\". "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Nurgling Infestation",
+		"description": "-1A targeting this general +1 to-hit for nurglings wholly within 7\". "
+	},
+	{
+		"type": "commandTrait",
+		"name": "Pestilent Breath",
+		"description": "Start of shooting enemy unit within 7\" 1 die per model 5+ MW. "
+	}
+]
