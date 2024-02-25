@@ -1,34 +1,40 @@
 <script lang="ts">
+	import { cards } from '$lib/cards';
 </script>
 
-<div class="card">
-	<div class="head">
-		<h2>Command Ability</h2>
-
-		<h1>All-out attack</h1>
-	</div>
-	<div class="effect">
-		<h1>+1 To-hit</h1>
-	</div>
-	<div class="body">
-		<p>
-			"You can use this command ability when you pick a friendly unit to shoot in your shooting
-			phase or fight in the combat phase. That unit must receive the command. Add 1 to hit rolls for
-			attacks made by that unit until the end of that phase"
-		</p>
-	</div>
-	<div class="footer">
-		<div class="footer-content">
-			<!--<div>[Start of battle round] [Hero] [Movement] [Shooting] [Charge] [Combat] [Battleshock]</div>-->
-			Combat Phase
-		</div>
-	</div>
+<div class="container">
+	{#each cards as card}
+		{#each Array(card.count) as _}
+			<div class="card">
+				<div class="head">
+					<h2>{card.type}</h2>
+					<h1>{card.title}</h1>
+				</div>
+				<div class="effect">{card.effect}</div>
+				<div class="body">
+					"{card.body}
+				</div>
+				<div class="footer">
+					<div class="footer-content">
+						{card.phase}
+					</div>
+				</div>
+			</div>
+		{/each}
+	{/each}
 </div>
 
 <style>
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 	.card {
-		width: 60mm;
-		height: 83mm;
+		page-break-inside: avoid;
+		margin: 10px;
+		width: 62mm;
+		height: 86mm;
 		display: grid;
 		grid-template-rows: auto auto 1fr auto;
 		border-radius: 5px;
@@ -58,18 +64,21 @@
 	}
 
 	.effect {
-		height: 15mm;
 		text-align: center;
 		font-family: 'Alegreya', serif;
-		font-size: 16px;
+		font-size: 32px;
+		line-height: 1;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		font-weight: 900;
 	}
 
 	.body {
-		margin: 5px;
+		margin: 15px;
 		font-family: 'Open Sans', sans-serif;
-		font-size: 12px;
+		font-size: 10px;
 		font-weight: 300;
+		font-style: italic;
 	}
 
 	.footer {
