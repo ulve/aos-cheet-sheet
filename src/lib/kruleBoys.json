@@ -1,0 +1,123 @@
+[
+	{
+		"faction": "Orruk Warclans",
+		"type": "leader",
+		"name": "Breaka-boss on Mirebrute Troggoth",
+		"movement": "5\"",
+		"save": "4+",
+		"bravery": "7",
+		"wounds": "12",
+		"meleeWeapons": [
+			{
+				"name": "Bident-Goad",
+				"range": "1\"",
+				"attacks": "5",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-",
+				"damage": "2"
+			},
+			{
+				"name": "Iron-bound clubs",
+				"range": "1\"",
+				"attacks": "4",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-2",
+				"damage": "3"
+			}
+		],
+		"abilities": [
+			{
+				"name": "Breaka-harness",
+				"description": "Start of combat phase. Take D3W +2A. "
+			}
+		]
+	},
+	{
+		"faction": "Orruk Warclans",
+		"type": "leader",
+		"name": "Gobsprakk",
+		"movement": "5\"",
+		"save": "4+",
+		"bravery": "7",
+		"wounds": "12",
+		"meleeWeapons": [
+			{
+				"name": "Bogbark Staff",
+				"range": "3\"",
+				"attacks": "2",
+				"toHit": "3+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "D3"
+			},
+			{
+				"name": "Beak and Flesh-tearing Talons",
+				"range": "1\"",
+				"attacks": "*",
+				"toHit": "4+",
+				"toWound": "3+",
+				"rend": "-1",
+				"damage": "2"
+			},
+			{
+				"name": "Stinger",
+				"range": "1\"",
+				"attacks": "1",
+				"toHit": "3+",
+				"toWound": "*",
+				"rend": "-1",
+				"damage": "D6"
+			},
+			{
+				"name": "Back-up Stabba",
+				"range": "1\"",
+				"attacks": "2",
+				"toHit": "4+",
+				"toWound": "4+",
+				"rend": "-",
+				"damage": "1"
+			}
+		],
+		"damageTable": {
+			"header": ["Wounds", "Move", "Beak and talons", "Stinger"],
+			"rows": [
+				["0-5", "14\"", "5", "2+"],
+				["6-8", "12\"", "4", "3+"],
+				["9-11", "10\"", "3", "4+"],
+				["14", "8\"", "2", "5+"]
+			]
+		},
+		"abilities": [
+			{
+				"name": "Wizard",
+				"description": "Cast 2 undbind 2. "
+			},
+			{
+				"name": "Fly",
+				"description": "This unit can fly. "
+			},
+			{
+				"name": "Glyphic Banners",
+				"description": "6+ ward. "
+			},
+			{
+				"name": "Mork Sez No!",
+				"description": "On dispell caster D3 MW. "
+			},
+			{
+				"name": "Mouth of Mork",
+				"description": "Reroll redeploy. Unleash hell not -1. "
+			},
+			{
+				"name": "Screamin’ Mandrakk",
+				"description": "Once per battle 3D6 unbind. "
+			},
+			{
+				"name": "Summon Boggy Mist",
+				"description": "CV7 +1\" charge enemy -1\". "
+			}
+		]
+	}
+]
